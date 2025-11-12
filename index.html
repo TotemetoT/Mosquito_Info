@@ -7,38 +7,24 @@
     <link rel="stylesheet" href="style.css" />   
 </head>
 <body>
-    <!-- Script -->
-    <script>
-        function openMenu() {
-            document.getElementById("side-menu").style.width = "250px";
-        }
-
-        function closeMenu() {
-            document.getElementById("side-menu").style.width = "0";
-        }
-    </script>
-    <!-- NavBar -->
+    <!-- NavBar-->
     <nav class="navbar">
         <div class="navbar-logo">
             <a href="index.html">
                 <img src="https://i0.wp.com/teamcaptainsdatathon.com/wp-content/uploads/2025/10/sails-white.png?fit=820%2C600&ssl=1" alt="Captains Datathon Logo">
             </a>
         </div>
+        
         <h1 class="navbar-title">Captains Datathon Team</h1>
-        <!-- Side Menu -->
-        <div id="side-menu" class="side-menu">
-            <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-            <a href="index.html">Home</a>
-            <a href="scanner.html">Mosquito Scanner</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="navbar-menu" onclick="openMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scanner.html">Mosquito Scanner</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
+
     <!-- Video & Text -->
     <section class="mw-hero">
         <video autoplay muted loop playsinline class="mw-video" src="img/mainVideo.mp4"></video>
