@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captains Datathon</title>
+    <link rel="stylesheet" href="style.css" />   
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="index.html">
+                <img src="https://i0.wp.com/teamcaptainsdatathon.com/wp-content/uploads/2025/10/sails-white.png?fit=820%2C600&ssl=1" alt="Captains Datathon Logo">
+            </a>
+        </div>
+        <h1 class="navbar-title">Captains Datathon Team</h1>
+        <div class="navbar-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <!-- Video & Text -->
+    <section class="mw-hero">
+        <video autoplay muted loop playsinline class="mw-video" src="img/mainVideo.mp4"></video>
+
+        <div class="mw-overlay">
+            <h1 class="mw-title">Mosquito<span>Watch</span></h1>
+            <p class="mw-subtitle">Mosquito Detection Species Classification System.</p>
+        </div>
+    </section>
+    <!-- Section 1 -->
+    <section class="mosquito-section">
+        <h2 class="mosquito-heading">
+            Smart Mosquito Surveillance:
+            <span class="mosquito-green">AI Classification</span> and
+            <span class="mosquito-blue">Community Awareness</span>.
+        </h2>
+
+        <div class="mosquito-flex">
+            <div class="mosquito-image">
+            <!-- 🖼️ Add your image file path below -->
+            <img src="img/waterGirl.jpg" alt="Mosquito surveillance image">
+            </div>
+
+            <div class="mosquito-text">
+            <p>
+                Mosquito-borne diseases continue to pose significant health risks in the Hampton Roads region, 
+                where a <strong>warm and humid climate</strong> creates ideal breeding conditions. Current mosquito surveillance 
+                methods require trained specialists to <strong>manually</strong> identify species from trap images or samples. 
+                This process limits the speed and scale of data collection.
+            </p>
+
+            <p>
+                As weather patterns and land-use changes influence mosquito populations, there is a growing need 
+                for data-driven tools that can anticipate mosquito activity and support more effective control 
+                strategies. Our project combines deep learning and data visualization to address these challenges.
+            </p>
+
+            <p>
+                We trained a deep convolutional neural network model capable of classifying mosquito species from 
+                image data, using supervised learning and fine-tuning on a pretrained <strong>ResNet 34 architecture</strong>. 
+                The dataset was partitioned into training, validation, and testing sets to ensure robust 
+                generalization and data augmentation (random flips, rotations, and brightness adjustments) was 
+                applied to hedge against overfitting.
+            </p>
+            </div>
+        </div>
+    </section>
+    <!-- Section 2 - Tools Carousel -->
+    <section class="carousel-section">
+        <h2 class="carousel-heading">
+            Tools that <span class="carousel-green">Simplify</span> <span class="carousel-blue">Complexity</span>.
+        </h2>
+
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <img src="img/1.png" alt="Tool 1">
+                <img src="img/2.png" alt="Tool 2">
+                <img src="img/3.png" alt="Tool 3">
+                <img src="img/4.png" alt="Tool 4">
+                <img src="img/5.png" alt="Tool 5">
+            </div>
+        </div>
+    </section>
+    <!-- Section 3 -->
+    <section class="ai-performance">
+        <div class="ai-text">
+            <h2>
+            Our AI achieved <span class="ai-green">98.24%</span> accuracy 
+            with a macroF1 score of <span class="ai-green">97.14%</span>.
+            </h2>
+            <p>
+            After multiple training iterations and model adjustments, it demonstrated strong reliability across all given mosquito classes. 
+            This automates the identification of species to focus on more aspects of mosquito surveillance.
+            </p>
+        </div>
+        <div class="ai-image">
+            <img src="img/graph.avif" alt="AI performance graph">
+        </div>
+    </section>
+</body>
+</html>
