@@ -7,22 +7,40 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-    <div class="navbar-logo">
-        <a href="index.html">
-            <img src="https://i0.wp.com/teamcaptainsdatathon.com/wp-content/uploads/2025/10/sails-white.png?fit=820%2C600&ssl=1" alt="Captains Datathon Logo">
-        </a>
-    </div>
-    <h1 class="navbar-title">Captains Datathon Team</h1>
-    <div class="navbar-menu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    </nav>
+    <!-- Script -->
+    <script>
+        function openMenu() {
+            document.getElementById("side-menu").style.width = "250px";
+        }
 
+        function closeMenu() {
+            document.getElementById("side-menu").style.width = "0";
+        }
+    </script>
+    <!-- NavBar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="index.html">
+                <img src="https://i0.wp.com/teamcaptainsdatathon.com/wp-content/uploads/2025/10/sails-white.png?fit=820%2C600&ssl=1" alt="Captains Datathon Logo">
+            </a>
+        </div>
+        <h1 class="navbar-title">Captains Datathon Team</h1>
+        <!-- Side Menu -->
+        <div id="side-menu" class="side-menu">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="scanner.html">Mosquito Scanner</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="navbar-menu" onclick="openMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
     <!-- Main Body -->
-    
+    <iframe src="https://cnu.maps.arcgis.com/apps/instant/basic/index.html?appid=0c1fb4ff6f8c459c9f76b5d8857676ae" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen>…</iframe>
+    <iframe src="https://totemetot-mosquito.hf.space" frameborder="0" width="100%" height="450"></iframe>
 </body>
 </html>
