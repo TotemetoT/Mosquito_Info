@@ -1,0 +1,31 @@
+Species,Known or Potential Diseases,Notes
+Aedes aegypti,"Dengue, Zika, Chikungunya, Yellow fever",Primary vector globally
+Aedes albopictus,"Dengue, Zika, Chikungunya, La Crosse virus, West Nile (occasionally)","Invasive vector, common in VA"
+Aedes atlanticus,Occasional arbovirus detections (not major human vector),Limited evidence
+Aedes atropalpus,None known (nuisance only),Not a known vector
+Aedes canadensis,Eastern equine encephalitis (EEE) (occasionally),Possible bridge vector
+Aedes infirmatus,Occasional arbovirus detections,Minor vector role
+Aedes sollicitans,"EEE (bridge vector), WNV (rare)",Coastal salt-marsh species
+Aedes taeniorhynchus,Venezuelan equine encephalitis (occasionally),"Coastal species, nuisance biter"
+Aedes triseriatus,La Crosse encephalitis virus (LACV),Primary vector of La Crosse virus
+Aedes vexans,"West Nile, Cache Valley virus (occasionally)",Floodwater species
+Anopheles crucians,"Malaria (potential, historical)",Not currently transmitting locally
+Anopheles punctipennis,"Malaria (potential, historical)",Not currently transmitting locally
+Anopheles quadrimaculatus,Malaria (historical U.S. vector),No local transmission
+Coquillettidia perturbans,"EEE (bridge vector), WNV (occasionally)",Bridge vector from birds to mammals
+Culex erraticus,"EEE, West Nile (occasionally)",Secondary vector
+Culex pipiens/restuans,"West Nile virus, St. Louis encephalitis",Primary WNV vector in Virginia
+Culex salinarius,"West Nile virus, Eastern equine encephalitis","Bridge vector, feeds on birds & mammals"
+Culex territans,None significant (feeds on amphibians),Not a human-disease vector
+Culiseta melanura,Eastern equine encephalitis (EEE),Primary enzootic vector in bird cycle
+Orthopodomyia signifera,None significant,Bird-feeding mosquito
+Psorophora ciliata,Occasional arbovirus detections,"Nuisance biter, limited vector role"
+Psorophora columbiae,Occasional arbovirus detections,Agricultural pest species
+Psorophora ferox,"EEE (occasionally), Cache Valley virus",Occasional bridge vector
+Psorophora howardii,None known (nuisance),Large nuisance biter
+Uranotaenia sapphirina,None known to affect humans,Feeds mainly on amphibians/invertebrates
+Culex Nigripalpus,"St. Louis encephalitis (SLE), Eastern equine encephalitis (EEE), West Nile virus (experimental), Dog heartworm",Primary vector of SLE in Florida; occasionally associated with EEE and WNV.
+Culex coronator,Potential for West Nile virus,Expanding range species with potential involvement in WNV transmission.
+Culex pipiens_restuans,,
+Psoraphora howardii,,
+Toxorhynchites rutilus,None,Larvae are predatory on other mosquito larvae; non-biting adult species.
