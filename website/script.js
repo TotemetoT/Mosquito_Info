@@ -1,5 +1,5 @@
 async function loadCSV() {
-    const response = await fetch("Mosquito.csv");
+    const response = await fetch("../data/Mosquito.csv");
     const data = await response.text();
 
     // Split rows while respecting quoted commas

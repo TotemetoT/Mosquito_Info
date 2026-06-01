@@ -367,7 +367,7 @@ td ul {
 .carousel-track {
   display: flex;
   gap: 10px;
-  animation: slide-left 15s linear infinite;
+  animation: slide-left 30s linear infinite;
 }
 
 /* Images in carousel */ .carousel-track img, .center-img {
