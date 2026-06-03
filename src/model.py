@@ -5,15 +5,7 @@ import torchvision.models as models
 
 
 def get_model(num_classes=30, model_name="resnet18", pretrained=True):
-    """
-    Returns a classification model.
-
-    Args:
-        num_classes (int): number of output classes (4 for xBD)
-        model_name (str): model architecture
-        pretrained (bool): use ImageNet pretrained weights
-    """
-
+    
     if model_name == "resnet18":
         model = models.resnet18(pretrained=pretrained)
         in_features = model.fc.in_features
