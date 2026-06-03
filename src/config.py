@@ -34,6 +34,7 @@ LOG_PATH = "checkpoints/training_logs.pth"
 # DEVICE
 # ===============================
 
+# Can check for GPU availability at utils.check_device()
 DEVICE = "cuda" # Falls back to CPU if unavailable
 
 # ===============================
@@ -65,16 +66,16 @@ CLASS_NAMES = {
     "Culex pipiens/restuans",
     "Culex salinarius",
     "Culex territans",
+    "Culex Nigripalpus",
+    "Culex coronator", 
+    "Culex pipiens_restuans",
     "Culiseta melanura",
     "Orthopodomyia signifera",
     "Psorophora ciliata",
     "Psorophora columbiae",
     "Psorophora ferox",
     "Psorophora howardii",
-    "Uranotaenia sapphirina",
-    "Culex Nigripalpus",
-    "Culex coronator",
-    "Culex pipiens_restuans",
     "Psoraphora howardii",
-    "Toxorhynchites rutilus"
+    "Toxorhynchites rutilus",
+    "Uranotaenia sapphirina"
 }
