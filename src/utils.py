@@ -33,9 +33,9 @@ def rename_and_move_imgs(src_dir, dst_dir, fname, prefix="img"):
     """
     Takes a given directory of images and renames them for consistency
 
-    @param src_dir: source directory containing the images
-    @param dst_dir: destination directory to save the renamed images
-    @param fname: name of the mosquito species
+    @param src_dir: source directory
+    @param dst_dir: destination directory
+    @param fname: mosquito species
     """
     src_dir = Path(src_dir)
     dst_dir = Path(dst_dir)
@@ -46,15 +46,24 @@ def rename_and_move_imgs(src_dir, dst_dir, fname, prefix="img"):
     files = sorted([f for f in src_dir.iterdir() if f.suffix.lower() in img_exts])
 
     for i, file in enumerate(files):
-        new_name = f"{fname}_{i:03d}{file.suffix.lower()}"
+        new_name = f"{fname}{i:03d}{file.suffix.lower()}" # 3 digits, can change later
         new_path = dst_dir / new_name
 
         shutil.copy2(file, new_path)  # use shutil.move() if you want to move instead of copy
         print(f"{file.name} -> {new_name}")
 
 if __name__ == "__main__":
-    # Rename & Move Images
-    fname = "Psorophora_Ciliata"
-    src = f'{cfg.DATA_DIR}/{fname}'
-    dst = f'{cfg.DATA_DIR}/processed/{fname}'
-    rename_and_move_imgs(src, dst, fname)
+
+    # For smaller dataset, in future use cfg.CLASS_NAMES
+    # mosquitos = {
+    #     "Aedes_Atlanticus": 0,
+    #     "Aedes_Infirmatus": 1,
+    #     "Orthopodomyia_Signifera": 2,
+    #     "Psoraphora_Howardii": 3,
+    #     "Psorophora_Ciliata": 4
+    # }
+    # for m in mosquitos:
+    #     src = f'{cfg.DATA_DIR}/{m}'
+    #     dst = f'{cfg.DATA_DIR}/processed/{m}'
+    #     rename_and_move_imgs(src, dst, mosquitos[m])
+    pass
