@@ -5,12 +5,15 @@
 # ===============================
 
 DATA_DIR = "data/mosquito_data"
+TRAIN_DIR = f"{DATA_DIR}/train"
+TEST_DIR = f"{DATA_DIR}/test"
+VAL_DIR = f"{DATA_DIR}/val"
 
 # ===============================
 # MODEL SETTINGS
 # ===============================
 
-MODEL_NAME = "resnet34"
+MODEL_NAME = "resnet34" # Options: 18, 34, 50
 NUM_CLASSES = 30
 
 # ===============================
@@ -47,14 +50,24 @@ SEED = 42
 # CLASS NAMES - CHECK OVER ONCE DATA IS HERE
 # ===============================
 
-# SMALLER DATASET
-CLASS_NAMES = {
+# SMALLER DATASET - SORTING IMAGE NAMES
+IMG_MAP = {
     "Aedes_Atlanticus": 0,
     "Aedes_Infirmatus": 1,
     "Orthopodomyia_Signifera": 2,
     "Psoraphora_Howardii": 3,
     "Psorophora_Ciliata": 4
 }
+
+# SMALLER DATASET - IDENTIFYING SPECIES
+MOSQ_MAP = {
+    0: "Aedes_Atlanticus",
+    1: "Aedes_Infirmatus",
+    2: "Orthopodomyia_Signifera",
+    3: "Psoraphora_Howardii",
+    4: "Psorophora_Ciliata"
+}
+
 
 # FULL DATASET
 # CLASS_NAMES = {
