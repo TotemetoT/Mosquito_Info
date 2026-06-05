@@ -1,5 +1,8 @@
 # Util functions & Proprocessing
 
+import torch
+
+from model import get_model
 import configs as cfg
 
 # ==============================
@@ -7,8 +10,6 @@ import configs as cfg
 # ==============================
 
 def check_device():
-    import torch
-
     # Check for NVIDIA GPU, Apple Silicon, or default to CPU
     if torch.cuda.is_available():
         device = torch.device("cuda")

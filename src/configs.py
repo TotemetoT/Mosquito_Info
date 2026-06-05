@@ -14,7 +14,7 @@ VAL_DIR = f"{DATA_DIR}/val"
 # ===============================
 
 MODEL_NAME = "resnet34" # Options: 18, 34, 50
-NUM_CLASSES = 30
+NUM_CLASSES = 5
 
 # ===============================
 # TRAINING HYPERPARAMETERS
@@ -24,6 +24,8 @@ BATCH_SIZE = 30
 LR = 1e-4
 EPOCHS = 20
 
+NUM_WORKERS = 4
+
 # ===============================
 # CHECKPOINTS (Trained Model)
 # ===============================
@@ -31,6 +33,7 @@ EPOCHS = 20
 CHECKPOINT_DIR = "checkpoints"
 BEST_MODEL_DIR = "checkpoints/best_model.pth"
 FINAL_MODEL_PATH = "checkpoints/final_model.pth"
+CONFUSION_MATRIX_DIR = f"{CHECKPOINT_DIR}/cm.png"
 LOG_PATH = "checkpoints/training_logs.pth"
 
 # ===============================
