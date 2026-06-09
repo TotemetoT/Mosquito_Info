@@ -1,5 +1,8 @@
 # Training methods for model
 
+import os
+import csv
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -74,6 +77,22 @@ def validate(
 
 def main():
     device = cfg.DEVICE
+
+    # =================================
+    # LOGGING SETUP
+    # =================================
+
+    csv_path = cfg.LOG_PATH
+
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "epoch",
+            "train_loss",
+            "train_acc",
+            "val_loss",
+            "val_acc"
+        ])
 
     # ===============================
     # IMAGE TRANSFORMATIONS
@@ -176,13 +195,28 @@ def main():
             f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}"
         )
 
+        with open(csv_path, "a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                epoch + 1,
+                train_loss,
+                train_acc,
+                val_loss,
+                val_acc
+            ])
+
         # Save best model
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            torch.save(model.state_dict(), cfg.BEST_MODEL_DIR)
+            torch.save(model.state_dict(), cfg.MODEL_DIR)
+
+    torch.save(
+        model.state_dict(),
+        cfg.FINAL_DIR
+    )
 
     model.load_state_dict(
-        torch.load(cfg.BEST_MODEL_DIR)
+        torch.load(cfg.MODEL_DIR)
     )
 
     test_loss, test_acc = validate(

@@ -20,9 +20,9 @@ NUM_CLASSES = 5
 # TRAINING HYPERPARAMETERS
 # ===============================
 
-BATCH_SIZE = 30
+BATCH_SIZE = 20
 LR = 1e-4
-EPOCHS = 20
+EPOCHS = 100
 
 NUM_WORKERS = 4
 
@@ -30,17 +30,20 @@ NUM_WORKERS = 4
 # CHECKPOINTS (Trained Model)
 # ===============================
 
-CHECKPOINT_DIR = "checkpoints"
-BEST_MODEL_DIR = "checkpoints/best_model.pth"
-FINAL_MODEL_PATH = "checkpoints/final_model.pth"
-CONFUSION_MATRIX_DIR = f"{CHECKPOINT_DIR}/cm.png"
-LOG_PATH = "checkpoints/training_logs.pth"
+CHECKPOINT_DIR = "checkpoints/model_100" # Working path - Change for each trained model
+MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
+FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
+CONFUSION_MATRIX_DIR = f"{CHECKPOINT_DIR}/BEST_cm.png"
+
+# Logging
+LOG_DIR = f'{CHECKPOINT_DIR}'
+LOG_PATH = f'{LOG_DIR}/logs.csv'
 
 # ===============================
 # DEVICE
 # ===============================
 
-# Can check for GPU availability at utils.check_device()
+# Can check for GPU availability with utils.check_device()
 DEVICE = "cuda" # Falls back to CPU if unavailable
 
 # ===============================

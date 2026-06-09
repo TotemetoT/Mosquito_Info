@@ -1,6 +1,9 @@
 # Util functions & Proprocessing
 
 import torch
+import random
+from pathlib import Path
+import shutil
 
 from model import get_model
 import configs as cfg
@@ -33,9 +36,6 @@ def rename_and_move_imgs(src_dir, dst_dir, fname, prefix="img"):
     @param fname: mosquito species
     """
 
-    from pathlib import Path
-    import shutil
-
     src_dir = Path(src_dir)
     dst_dir = Path(dst_dir)
     dst_dir.mkdir(parents=True, exist_ok=True)
@@ -50,6 +50,66 @@ def rename_and_move_imgs(src_dir, dst_dir, fname, prefix="img"):
 
         shutil.copy2(file, new_path)  # use shutil.move() if you want to move instead of copy
         print(f"{file.name} -> {new_name}")
+
+def split_data(split, dir):
+    """
+    Goes through processed directories and sorts the data
+    @param split: how to split data [train,val,test]
+    """
+    if sum(split) != 1:
+        raise ValueError("Split doesn't add up to 1")
+    
+    train, val, test = split
+    dir = Path(dir)
+
+    img_exts = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
+    files = sorted([f for f in dir.iterdir() if f.suffix.lower() in img_exts])
+    random.shuffle(files)
+    num_files = len(files)
+
+    # ===========================
+    # CALCULATE SPLITS
+    # ===========================
+
+    train_files = train * num_files
+    print(train_files)
+    if train_files % 1 != 0:
+        train_files = int(train_files) + 1
+
+    test_files = test * num_files
+    print(test_files)
+    if test_files % 1 != 0 and train_files % 1 >= 0.5:
+        test_files = int(test_files) + 1
+    else: 
+        test_files = int(test_files)
+    
+    val_files = num_files - (test_files + train_files)
+
+    print(f'splits: train: {train_files} | val: {val_files} | test: {test_files} | {train_files + val_files + test_files} = {num_files}')
+    
+    # ==============================
+    # MOVE DATA (TRAIN,VAL,TEST)
+    # ==============================
+
+    #TODO Add actual paths
+    train_dir = Path("data/test_splits/train")
+    val_dir   = Path("data/test_splits/val")
+    test_dir  = Path("data/test_splits/test")
+
+    for f in files:
+        if train_files != 0:
+            shutil.copy2(f, train_dir)
+            train_files -= 1
+            print(f'Moving {f} to {train_dir} | {train_files}')
+        elif test_files != 0:
+            shutil.copy2(f, test_dir)
+            test_files -= 1
+            print(f'Moving {f} to {train_dir} | {test_files}')
+        else:
+            shutil.copy2(f, val_dir)
+            val_files -= 1
+            print(f'Moving {f} to {train_dir} | {val_files}')
+
 
 # ======================================
 # IMAGE IDENTIFICATION (FILENAME-BASED)
@@ -113,15 +173,20 @@ def test_dataset(split):
 if __name__ == "__main__":
 
     # For smaller dataset, in future use cfg.CLASS_NAMES
-    # mosquitos = {
-    #     "Aedes_Atlanticus": 0,
-    #     "Aedes_Infirmatus": 1,
-    #     "Orthopodomyia_Signifera": 2,
-    #     "Psoraphora_Howardii": 3,
-    #     "Psorophora_Ciliata": 4
-    # }
+    mosquitos = {
+        "Aedes_Atlanticus": 0,
+        "Aedes_Infirmatus": 1,
+        "Orthopodomyia_Signifera": 2,
+        "Psoraphora_Howardii": 3,
+        "Psorophora_Ciliata": 4
+    }
+
+    dir = "data/processed/Aedes_Atlanticus"
+    split = [.70,.15,.15]
+    split_data(split, dir)
     # for m in mosquitos:
     #     src = f'{cfg.DATA_DIR}/{m}'
     #     dst = f'{cfg.DATA_DIR}/processed/{m}'
     #     rename_and_move_imgs(src, dst, mosquitos[m])
-    pass
+
+    # split_data([.60, .15, .25], 378)
