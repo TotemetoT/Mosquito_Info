@@ -9,12 +9,15 @@ TRAIN_DIR = f"{DATA_DIR}/train"
 TEST_DIR = f"{DATA_DIR}/test"
 VAL_DIR = f"{DATA_DIR}/val"
 
+UPLOAD_DIR = "data/uploaded"
+PROCESSED_DIR = "data/processed"
+
 # ===============================
 # MODEL SETTINGS
 # ===============================
 
 MODEL_NAME = "resnet34" # Options: 18, 34, 50
-NUM_CLASSES = 5
+NUM_CLASSES = 5 # 29 TOTAL (FULL DATASET)
 
 # ===============================
 # TRAINING HYPERPARAMETERS
@@ -66,45 +69,76 @@ IMG_MAP = {
 }
 
 # SMALLER DATASET - IDENTIFYING SPECIES
-MOSQ_MAP = {
-    0: "Aedes_Atlanticus",
-    1: "Aedes_Infirmatus",
-    2: "Orthopodomyia_Signifera",
-    3: "Psoraphora_Howardii",
-    4: "Psorophora_Ciliata"
-}
+# MOSQ_MAP = {
+#     0: "Aedes_Atlanticus",
+#     1: "Aedes_Infirmatus",
+#     2: "Orthopodomyia_Signifera",
+#     3: "Psoraphora_Howardii",
+#     4: "Psorophora_Ciliata"
+# }
 
 
 # FULL DATASET
-# CLASS_NAMES = {
-#     "Aedes aegypti",
-#     "Aedes albopictus",
-#     "Aedes atlanticus",
-#     "Aedes atropalpus",
-#     "Aedes canadensis",
-#     "Aedes infirmatus",
-#     "Aedes sollicitans",
-#     "Aedes taeniorhynchus",
-#     "Aedes triseriatus",
-#     "Aedes vexans",
-#     "Anopheles crucians",
-#     "Anopheles punctipennis",
-#     "Anopheles quadrimaculatus",
-#     "Coquillettidia perturbans",
-#     "Culex erraticus",
-#     "Culex pipiens/restuans",
-#     "Culex salinarius",
-#     "Culex territans",
-#     "Culex Nigripalpus",
-#     "Culex coronator", 
-#     "Culex pipiens_restuans",
-#     "Culiseta melanura",
-#     "Orthopodomyia signifera",
-#     "Psorophora ciliata",
-#     "Psorophora columbiae",
-#     "Psorophora ferox",
-#     "Psorophora howardii",
-#     "Psoraphora howardii",
-#     "Toxorhynchites rutilus",
-#     "Uranotaenia sapphirina"
-# }
+MOSQ_MAP = {
+    0:  "Aedes aegypti",
+    1:  "Aedes albopictus",
+    2:  "Aedes atlanticus",
+    3:  "Aedes atropalpus",
+    4:  "Aedes canadensis",
+    5:  "Aedes infirmatus",
+    6:  "Aedes sollicitans",
+    7:  "Aedes taeniorhynchus",
+    8:  "Aedes triseriatus",
+    9:  "Aedes vexans",
+    10: "Anopheles crucians",
+    11: "Anopheles punctipennis",
+    12: "Anopheles quadrimaculatus",
+    13: "Coquillettidia perturbans",
+    14: "Culex erraticus",
+    15: "Culex salinarius",
+    16: "Culex territans",
+    17: "Culex Nigripalpus",
+    18: "Culex coronator", 
+    19: "Culex pipiens_restuans",
+    20: "Culiseta melanura",
+    21: "Males",
+    22: "Orthopodomyia signifera",
+    23: "Psorophora ciliata",
+    24: "Psorophora columbiae",
+    25: "Psorophora ferox",
+    26: "Psoraphora howardii", # Should be Psorophora Howardii
+    27: "Toxorhynchites rutilus",
+    28: "Uranotaenia sapphirina"
+}
+
+IMG_MAP_REVERSED = {
+    "Aedes aegypti": 0,
+    "Aedes albopictus": 1,
+    "Aedes atlanticus": 2,
+    "Aedes atropalpus": 3,
+    "Aedes canadensis": 4,
+    "Aedes infirmatus": 5,
+    "Aedes sollicitans": 6,
+    "Aedes taeniorhynchus": 7,
+    "Aedes triseriatus": 8,
+    "Aedes vexans": 9,
+    "Anopheles crucians": 10,
+    "Anopheles punctipennis": 11,
+    "Anopheles quadrimaculatus": 12,
+    "Coquillettidia perturbans": 13,
+    "Culex erraticus": 14,
+    "Culex salinarius": 15,
+    "Culex territans": 16,
+    "Culex Nigripalpus": 17,
+    "Culex coronator": 18,
+    "Culex pipiens_restuans": 19,
+    "Culiseta melanura": 20,
+    "Males": 21,
+    "Orthopodomyia signifera": 22,
+    "Psorophora ciliata": 23,
+    "Psorophora columbiae": 24,
+    "Psorophora ferox": 25,
+    "Psoraphora howardii": 26,  # Should be Psorophora howardii
+    "Toxorhynchites rutilus": 27,
+    "Uranotaenia sapphirina": 28,
+}

@@ -91,10 +91,9 @@ def split_data(split, dir):
     # MOVE DATA (TRAIN,VAL,TEST)
     # ==============================
 
-    #TODO Add actual paths
-    train_dir = Path("data/test_splits/train")
-    val_dir   = Path("data/test_splits/val")
-    test_dir  = Path("data/test_splits/test")
+    train_dir = Path(cfg.TRAIN_DIR)
+    val_dir   = Path(cfg.VAL_DIR)
+    test_dir  = Path(cfg.TEST_DIR)
 
     for f in files:
         if train_files != 0:
@@ -104,11 +103,11 @@ def split_data(split, dir):
         elif test_files != 0:
             shutil.copy2(f, test_dir)
             test_files -= 1
-            print(f'Moving {f} to {train_dir} | {test_files}')
+            print(f'Moving {f} to {test_dir} | {test_files}')
         else:
             shutil.copy2(f, val_dir)
             val_files -= 1
-            print(f'Moving {f} to {train_dir} | {val_files}')
+            print(f'Moving {f} to {val_dir} | {val_files}')
 
 
 # ======================================
@@ -172,21 +171,15 @@ def test_dataset(split):
 
 if __name__ == "__main__":
 
-    # For smaller dataset, in future use cfg.CLASS_NAMES
-    mosquitos = {
-        "Aedes_Atlanticus": 0,
-        "Aedes_Infirmatus": 1,
-        "Orthopodomyia_Signifera": 2,
-        "Psoraphora_Howardii": 3,
-        "Psorophora_Ciliata": 4
-    }
+    mosquitos = cfg.IMG_MAP_REVERSED
 
-    dir = "data/processed/Aedes_Atlanticus"
-    split = [.70,.15,.15]
-    split_data(split, dir)
     # for m in mosquitos:
-    #     src = f'{cfg.DATA_DIR}/{m}'
-    #     dst = f'{cfg.DATA_DIR}/processed/{m}'
+    #     src = f'{cfg.UPLOAD_DIR}/{m}'
+    #     dst = f'{cfg.PROCESSED_DIR}/{m}'
     #     rename_and_move_imgs(src, dst, mosquitos[m])
 
-    # split_data([.60, .15, .25], 378)
+    for m in mosquitos:
+        print(f'Working on: {m}')
+        src = f'{cfg.PROCESSED_DIR}/{m}'
+        split = [.70,.15,.15]
+        split_data(split, src)
