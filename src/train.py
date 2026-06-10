@@ -8,6 +8,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision.transforms import *
+from tqdm import tqdm
 
 from dataset import MosquitoDataset
 from model import get_model
@@ -26,7 +27,9 @@ def train_one_epoch(
     correct = 0
     total = 0
 
-    for images, labels in dataloader:
+    loop = tqdm(dataloader, desc="training", leave=False)
+
+    for images, labels in loop:
         images, labels = images.to(device), labels.to(device)
 
         optimizer.zero_grad()
@@ -59,7 +62,8 @@ def validate(
     total = 0
 
     with torch.no_grad():
-        for images, labels in dataloader:
+        
+        for images, labels in tqdm(dataloader, desc="Validation", leave=False):
             images, labels = images.to(device), labels.to(device)
 
             outputs = model(images)

@@ -17,30 +17,34 @@ PROCESSED_DIR = "data/processed"
 # ===============================
 
 MODEL_NAME = "resnet34" # Options: 18, 34, 50
-NUM_CLASSES = 5 # 29 TOTAL (FULL DATASET)
+NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET)
 
 # ===============================
 # TRAINING HYPERPARAMETERS
 # ===============================
 
-BATCH_SIZE = 20
+BATCH_SIZE = 64
 LR = 1e-4
 EPOCHS = 100
 
 NUM_WORKERS = 4
 
-# ===============================
-# CHECKPOINTS (Trained Model)
-# ===============================
+# ====================================
+# CHECKPOINTS (Saving Trained Model)
+# ====================================
 
-CHECKPOINT_DIR = "checkpoints/model_100" # Working path - Change for each trained model
+model_name = "full_model_100"
+
+CHECKPOINT_DIR = f"checkpoints/{model_name}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
 FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
-CONFUSION_MATRIX_DIR = f"{CHECKPOINT_DIR}/BEST_cm.png"
 
 # Logging
 LOG_DIR = f'{CHECKPOINT_DIR}'
 LOG_PATH = f'{LOG_DIR}/logs.csv'
+
+# Classificaiton Report
+CLASSIFICATION_REPORT_DIR = f'{CHECKPOINT_DIR}/{model_name}_cr.txt'
 
 # ===============================
 # DEVICE

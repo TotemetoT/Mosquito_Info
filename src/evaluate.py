@@ -70,19 +70,27 @@ def test_loader():
 # CLASSIFICATION REPORT
 # ========================
 
-def cr(y_true, y_pred):
+def cr(y_true, y_pred, m):
     class_names = [
         cfg.MOSQ_MAP[i]
         for i in sorted(cfg.MOSQ_MAP.keys())
     ]
 
-    print(
-        classification_report(
+    report = classification_report(
             y_true,
             y_pred,
             target_names=class_names
         )
-    )
+    
+    with open(
+        cfg.CLASSIFICATION_REPORT_DIR, "a", encoding="utf-8") as f:
+        f.write("\n========================================\n")
+        f.write(f"{m:^40}\n")
+        f.write("========================================\n\n")
+
+        f.write(report)
+
+    # print(report)
 
     return class_names
 
@@ -164,7 +172,7 @@ def cm(
 # MAIN EVALUATE FUNCTION
 # ==========================
 
-def evaluate(m):
+def evaluate(m, name):
     model = load_model(m)
 
     y_true, y_pred = evaluate_model(
@@ -173,14 +181,15 @@ def evaluate(m):
 
     class_names = cr(
         y_true,
-        y_pred
+        y_pred,
+        m
     )
 
     cm(
         y_true=y_true,
         y_pred=y_pred,
         class_names=class_names,
-        save_path=cfg.CONFUSION_MATRIX_DIR
+        save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
     )
 
 # =========================
@@ -221,4 +230,8 @@ def plot_acc():
 if __name__ == "__main__":
     best = cfg.MODEL_DIR
     final = cfg.FINAL_DIR
-    evaluate(best)
+    for m, name in [[best, "B"], [final, "F"]]:
+        evaluate(m, name)
+    plot_acc()
+    plot_loss()
+    print("DONE!")
