@@ -82,15 +82,21 @@ def cr(y_true, y_pred, m):
             target_names=class_names
         )
     
-    with open(
-        cfg.CLASSIFICATION_REPORT_DIR, "a", encoding="utf-8") as f:
-        f.write("\n========================================\n")
+    with open(cfg.CLASSIFICATION_REPORT_DIR, "a", encoding="utf-8") as f:
+        f.write("==================================================\n")
+        f.write(f"{"CONFIGURATIONS":^50}\n")
+        f.write("==================================================\n\n")
+
+        f.write(f'MODEL         = {cfg.MODEL_NAME}')
+        f.write(f'BATCH SIZE    = {cfg.BATCH_SIZE}\n')
+        f.write(f'LEARNING RATE = {cfg.LR}\n')
+        f.write(f'EPOCHS        = {cfg.EPOCHS}')
+        
+        f.write("\n==================================================\n")
         f.write(f"{m:^40}\n")
-        f.write("========================================\n\n")
+        f.write("==================================================\n\n")
 
         f.write(report)
-
-    # print(report)
 
     return class_names
 

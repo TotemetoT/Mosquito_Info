@@ -25,7 +25,7 @@ NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET)
 
 BATCH_SIZE = 64
 LR = 1e-4
-EPOCHS = 100
+EPOCHS = 50
 
 NUM_WORKERS = 4
 
@@ -33,7 +33,7 @@ NUM_WORKERS = 4
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-model_name = "full_model_100"
+model_name = "full_model_50"
 
 CHECKPOINT_DIR = f"checkpoints/{model_name}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
