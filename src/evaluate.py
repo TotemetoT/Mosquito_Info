@@ -62,7 +62,7 @@ def test_loader():
 
     return DataLoader(
         test_dataset,
-        batch_size=cfg.BATCH_SIZE,
+        batch_size=cfg.BATCH_SIZE, 
         shuffle=False
     )
 
@@ -87,13 +87,13 @@ def cr(y_true, y_pred, m):
         f.write(f"{"CONFIGURATIONS":^50}\n")
         f.write("==================================================\n\n")
 
-        f.write(f'MODEL         = {cfg.MODEL_NAME}')
+        f.write(f'MODEL         = {cfg.MODEL_NAME}\n')
         f.write(f'BATCH SIZE    = {cfg.BATCH_SIZE}\n')
-        f.write(f'LEARNING RATE = {cfg.LR}\n')
-        f.write(f'EPOCHS        = {cfg.EPOCHS}')
+        f.write(f'LEARNING RATE = {cfg.LR}\n')         
+        f.write(f'EPOCHS        = {cfg.EPOCHS}\n')     
         
         f.write("\n==================================================\n")
-        f.write(f"{m:^40}\n")
+        f.write(f"{m:^50}\n")
         f.write("==================================================\n\n")
 
         f.write(report)

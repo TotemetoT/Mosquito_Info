@@ -1,5 +1,6 @@
 # Util functions & Proprocessing
 
+import os
 import torch
 import random
 from pathlib import Path
@@ -24,7 +25,7 @@ def check_device():
     print(f"Using device: {device}")
 
 # ==============================
-# PREPROCESSING FUNCTIONS
+# PREPROCESSING METHODS
 # ==============================
 
 def rename_and_move_imgs(src_dir, dst_dir, fname, prefix="img"):
@@ -178,8 +179,9 @@ if __name__ == "__main__":
     #     dst = f'{cfg.PROCESSED_DIR}/{m}'
     #     rename_and_move_imgs(src, dst, mosquitos[m])
 
-    for m in mosquitos:
-        print(f'Working on: {m}')
-        src = f'{cfg.PROCESSED_DIR}/{m}'
-        split = [.70,.15,.15]
-        split_data(split, src)
+    # for m in mosquitos:
+    #     print(f'Working on: {m}')
+    #     src = f'{cfg.PROCESSED_DIR}/{m}'
+    #     split = [.70,.15,.15]
+    #     split_data(split, src)
+

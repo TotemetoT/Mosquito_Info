@@ -38,12 +38,6 @@ class MosquitoDataset(Dataset):
                 if class_code[0]:
                     img_path = os.path.join(self.root_dir, self.split, filename)
                     self.samples.append((img_path, int(filename[:2])))
-            # For debugging purposes
-            # print(
-            #     f'[{self.split}] Loaded '
-            #     f'{len(self.samples)} images '
-            #     f'across {len(self.map)} classes'
-            # )
 
     def __len__(self):
         return len(self.samples)

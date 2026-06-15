@@ -103,8 +103,8 @@ def main():
     # ===============================
     train_transform = Compose([
         Resize((300,300)),
-        RandomCrop(224),
-        RandomHorizontalFlip(),
+        # RandomCrop(224),
+        # RandomHorizontalFlip(),
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -128,7 +128,7 @@ def main():
 
     train_loader = DataLoader(
         train_dataset,
-        batch_size=cfg.BATCH_SIZE,
+        batch_size=cfg.BATCH_SIZE, 
         shuffle=True,
         num_workers=cfg.NUM_WORKERS
     )
@@ -142,7 +142,7 @@ def main():
 
     val_loader = DataLoader(
         val_dataset,
-        batch_size=cfg.BATCH_SIZE,
+        batch_size=cfg.BATCH_SIZE, 
         shuffle=False,
         num_workers=cfg.NUM_WORKERS
     )
@@ -156,7 +156,7 @@ def main():
 
     test_loader = DataLoader(
         test_dataset,
-        batch_size=cfg.BATCH_SIZE,
+        batch_size=cfg.BATCH_SIZE, 
         shuffle=False,
         num_workers=cfg.NUM_WORKERS
     )
@@ -170,14 +170,14 @@ def main():
     ).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=cfg.LR)
+    optimizer = optim.Adam(model.parameters(), lr=cfg.LR) 
 
     # ===============================
     # TRAINING LOOP
     # ===============================
     best_val_acc = 0.0
 
-    for epoch in range(cfg.EPOCHS):
+    for epoch in range(cfg.EPOCHS): 
         train_loss, train_acc = train_one_epoch(
             model,
             train_loader,
@@ -194,7 +194,7 @@ def main():
         )
 
         print(
-            f"Epoch [{epoch+1}/{cfg.EPOCHS}] "
+            f"Epoch [{epoch+1}/{cfg.EPOCHS}] " 
             f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f} | "
             f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}"
         )
