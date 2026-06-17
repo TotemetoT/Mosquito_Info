@@ -22,7 +22,9 @@ def check_device():
     else:
         device = torch.device("cpu")
 
-    print(f"Using device: {device}")
+    num_cores = os.cpu_count()
+
+    print(f"Using device: {device}  |  CPU Count: {num_cores}")
 
 # ==============================
 # PREPROCESSING METHODS
@@ -136,7 +138,7 @@ def identify_img(img):
 
 def test_dataset(split):
     """
-    Tests the MosquitoDataset class by Loading a sample split
+    Tests the MosquitoDataset class by loading a sample split
     Will display a random image from the dataset
 
     @param split: dataset split to test (train/val/test)
@@ -166,6 +168,8 @@ def test_dataset(split):
 
     labels = [label for _, label in dataset.samples]
 
+    print(labels)
+
     img = image.permute(1, 2, 0).numpy()
     plt.imshow(img)
     plt.show()
@@ -185,3 +189,8 @@ if __name__ == "__main__":
     #     split = [.70,.15,.15]
     #     split_data(split, src)
 
+    # check_device()
+
+    for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
+        m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
+        print(m)

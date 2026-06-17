@@ -10,6 +10,7 @@ from sklearn.metrics import (
 )
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 from torch.utils.data import DataLoader
 
@@ -84,8 +85,8 @@ def cr(y_true, y_pred, m):
     
     with open(cfg.CLASSIFICATION_REPORT_DIR, "a", encoding="utf-8") as f:
         f.write("==================================================\n")
-        f.write(f"{"CONFIGURATIONS":^50}\n")
-        f.write("==================================================\n\n")
+        f.write(f"CONFIGURATIONS\n")
+        f.write("=================================================\n\n")
 
         f.write(f'MODEL         = {cfg.MODEL_NAME}\n')
         f.write(f'BATCH SIZE    = {cfg.BATCH_SIZE}\n')
@@ -93,7 +94,7 @@ def cr(y_true, y_pred, m):
         f.write(f'EPOCHS        = {cfg.EPOCHS}\n')     
         
         f.write("\n==================================================\n")
-        f.write(f"{m:^50}\n")
+        f.write(f"{m}\n")
         f.write("==================================================\n\n")
 
         f.write(report)
@@ -236,8 +237,14 @@ def plot_acc():
 if __name__ == "__main__":
     best = cfg.MODEL_DIR
     final = cfg.FINAL_DIR
-    for m, name in [[best, "B"], [final, "F"]]:
+    directory = Path(cfg.CHECKPOINT_DIR)
+
+    for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
+        m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
+        print(m)
+        name = f"{cfg.MN}_{(i+1)*5}"
         evaluate(m, name)
+    evaluate(best, "BEST")
     plot_acc()
     plot_loss()
     print("DONE!")

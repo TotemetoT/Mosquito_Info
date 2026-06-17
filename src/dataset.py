@@ -35,7 +35,7 @@ class MosquitoDataset(Dataset):
                     class_code = u.identify_img(filename) # (Bool, Class Name)
                 except ValueError:
                     continue
-                if class_code[0]:
+                if class_code[0] and class_code[1] != "Males": # Load without Males class
                     img_path = os.path.join(self.root_dir, self.split, filename)
                     self.samples.append((img_path, int(filename[:2])))
 
@@ -56,3 +56,5 @@ class MosquitoDataset(Dataset):
         return u.identify_img(label)[1]
     
 
+if __name__ == "__main__":
+    u.test_dataset("train")

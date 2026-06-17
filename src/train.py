@@ -23,6 +23,7 @@ def train_one_epoch(
 ):
     model.train()
 
+    max_batch_loss = 0.0
     running_loss = 0.0
     correct = 0
     total = 0
@@ -36,6 +37,9 @@ def train_one_epoch(
 
         outputs = model(images)
         loss = criterion(outputs, labels)
+
+        max_batch_loss = max(max_batch_loss, loss.item())
+
         loss.backward()
         optimizer.step()
 
@@ -47,7 +51,7 @@ def train_one_epoch(
     epoch_loss = running_loss / max(total, 1)
     epoch_acc = correct / max(total, 1)
 
-    return epoch_loss, epoch_acc
+    return epoch_loss, epoch_acc, max_batch_loss
 
 def validate(
         model,
@@ -95,7 +99,9 @@ def main():
             "train_loss",
             "train_acc",
             "val_loss",
-            "val_acc"
+            "val_acc",
+            "LR",
+            "max_batch_loss"
         ])
 
     # ===============================
@@ -178,7 +184,7 @@ def main():
     best_val_acc = 0.0
 
     for epoch in range(cfg.EPOCHS): 
-        train_loss, train_acc = train_one_epoch(
+        train_loss, train_acc, max_batch_loss = train_one_epoch(
             model,
             train_loader,
             criterion,
@@ -206,8 +212,14 @@ def main():
                 train_loss,
                 train_acc,
                 val_loss,
-                val_acc
+                val_acc,
+                optimizer.param_groups[0]['lr'],
+                max_batch_loss
             ])
+        
+        # Save every X epochs
+        if (epoch + 1) % cfg.SAVE_EPOCHS == 0:
+            torch.save(model.state_dict(), f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth")
 
         # Save best model
         if val_acc > best_val_acc:

@@ -17,7 +17,7 @@ PROCESSED_DIR = "data/processed"
 # ===============================
 
 MODEL_NAME = "resnet34" # Options: 18, 34, 50
-NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET)
+NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 
 # ===============================
 # TRAINING HYPERPARAMETERS
@@ -25,26 +25,30 @@ NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET)
 
 BATCH_SIZE = 64
 LR = 1e-4
-EPOCHS = 20
+EPOCHS = 50
 
-NUM_WORKERS = 4
+SAVE_EPOCHS = 5 # Save every X epochs
+
+# Can check for CPU count with utils.check_device()
+NUM_WORKERS = 8
 
 # ====================================
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-model_name = "full_model_20"
+MN = "no_males_TEST"
 
-CHECKPOINT_DIR = f"checkpoints/{model_name}" # Working path - Change for each trained model
+CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
 FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
 
+MODELS_DIR = f'{CHECKPOINT_DIR}/{MN}_'
 # Logging
 LOG_DIR = f'{CHECKPOINT_DIR}'
 LOG_PATH = f'{LOG_DIR}/logs.csv'
 
 # Classificaiton Report
-CLASSIFICATION_REPORT_DIR = f'{CHECKPOINT_DIR}/{model_name}_cr.txt'
+CLASSIFICATION_REPORT_DIR = f'{CHECKPOINT_DIR}/{MN}_cr.txt'
 
 # ===============================
 # DEVICE
@@ -63,26 +67,7 @@ SEED = 42
 # CLASS NAMES - CHECK OVER ONCE DATA IS HERE
 # ===============================
 
-# SMALLER DATASET - SORTING IMAGE NAMES
-IMG_MAP = {
-    "Aedes_Atlanticus": 0,
-    "Aedes_Infirmatus": 1,
-    "Orthopodomyia_Signifera": 2,
-    "Psoraphora_Howardii": 3,
-    "Psorophora_Ciliata": 4
-}
-
-# SMALLER DATASET - IDENTIFYING SPECIES
-# MOSQ_MAP = {
-#     0: "Aedes_Atlanticus",
-#     1: "Aedes_Infirmatus",
-#     2: "Orthopodomyia_Signifera",
-#     3: "Psoraphora_Howardii",
-#     4: "Psorophora_Ciliata"
-# }
-
-
-# FULL DATASET
+# int: str
 MOSQ_MAP = {
     0:  "Aedes aegypti",
     1:  "Aedes albopictus",
@@ -105,16 +90,16 @@ MOSQ_MAP = {
     18: "Culex coronator", 
     19: "Culex pipiens_restuans",
     20: "Culiseta melanura",
-    21: "Males",
-    22: "Orthopodomyia signifera",
-    23: "Psorophora ciliata",
-    24: "Psorophora columbiae",
-    25: "Psorophora ferox",
+    21: "Orthopodomyia signifera",
+    22: "Psorophora ciliata",
+    23: "Psorophora columbiae",
+    24: "Psorophora ferox",
     26: "Psoraphora howardii", # Should be Psorophora Howardii
     27: "Toxorhynchites rutilus",
     28: "Uranotaenia sapphirina"
 }
 
+# str: int
 IMG_MAP_REVERSED = {
     "Aedes aegypti": 0,
     "Aedes albopictus": 1,
@@ -137,7 +122,7 @@ IMG_MAP_REVERSED = {
     "Culex coronator": 18,
     "Culex pipiens_restuans": 19,
     "Culiseta melanura": 20,
-    "Males": 21,
+    # "Males": 21,
     "Orthopodomyia signifera": 22,
     "Psorophora ciliata": 23,
     "Psorophora columbiae": 24,
