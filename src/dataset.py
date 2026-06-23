@@ -57,4 +57,4 @@ class MosquitoDataset(Dataset):
     
 
 if __name__ == "__main__":
-    u.test_dataset("train")
+    u.test_dataset("test")

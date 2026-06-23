@@ -168,11 +168,19 @@ def test_dataset(split):
 
     labels = [label for _, label in dataset.samples]
 
-    print(labels)
+    label_dict = {}
+    for label in labels:
+        if label in label_dict:
+            label_dict[label] += 1
+        else:
+            label_dict[label] = 1
+    for l in label_dict:
+        print(l, ":",label_dict[l])
+    print(len(labels))
 
-    img = image.permute(1, 2, 0).numpy()
-    plt.imshow(img)
-    plt.show()
+    # img = image.permute(1, 2, 0).numpy()
+    # plt.imshow(img)
+    # plt.show()
 
 if __name__ == "__main__":
 
@@ -191,6 +199,4 @@ if __name__ == "__main__":
 
     # check_device()
 
-    for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
-        m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
-        print(m)
+    print(test_dataset("test"))

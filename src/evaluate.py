@@ -33,7 +33,8 @@ def load_model(m):
     model.load_state_dict(
         torch.load(
             m,
-            map_location=device
+            map_location=device,
+            weights_only=True
         )
     )
 
@@ -245,6 +246,4 @@ if __name__ == "__main__":
         name = f"{cfg.MN}_{(i+1)*5}"
         evaluate(m, name)
     evaluate(best, "BEST")
-    plot_acc()
-    plot_loss()
     print("DONE!")

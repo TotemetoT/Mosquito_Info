@@ -10,6 +10,7 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import *
 from tqdm import tqdm
 
+import evaluate as eval
 from dataset import MosquitoDataset
 from model import get_model
 import configs as cfg
@@ -216,6 +217,9 @@ def main():
                 optimizer.param_groups[0]['lr'],
                 max_batch_loss
             ])
+
+        eval.plot_acc()
+        eval.plot_loss()
         
         # Save every X epochs
         if (epoch + 1) % cfg.SAVE_EPOCHS == 0:
@@ -226,13 +230,8 @@ def main():
             best_val_acc = val_acc
             torch.save(model.state_dict(), cfg.MODEL_DIR)
 
-    torch.save(
-        model.state_dict(),
-        cfg.FINAL_DIR
-    )
-
     model.load_state_dict(
-        torch.load(cfg.MODEL_DIR)
+        torch.load(cfg.MODEL_DIR, weights_only=True)
     )
 
     test_loss, test_acc = validate(

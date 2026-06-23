@@ -12,31 +12,11 @@ VAL_DIR = f"{DATA_DIR}/val"
 UPLOAD_DIR = "data/uploaded"
 PROCESSED_DIR = "data/processed"
 
-# ===============================
-# MODEL SETTINGS
-# ===============================
-
-MODEL_NAME = "resnet34" # Options: 18, 34, 50
-NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
-
-# ===============================
-# TRAINING HYPERPARAMETERS
-# ===============================
-
-BATCH_SIZE = 64
-LR = 1e-4
-EPOCHS = 50
-
-SAVE_EPOCHS = 5 # Save every X epochs
-
-# Can check for CPU count with utils.check_device()
-NUM_WORKERS = 8
-
 # ====================================
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-MN = "no_males_TEST"
+MN = "no_males_RN50" # Training model name
 
 CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
@@ -67,18 +47,19 @@ SEED = 42
 # CLASS NAMES - CHECK OVER ONCE DATA IS HERE
 # ===============================
 
-# int: str
+# NO MALES
+
 MOSQ_MAP = {
-    0:  "Aedes aegypti",
-    1:  "Aedes albopictus",
-    2:  "Aedes atlanticus",
-    3:  "Aedes atropalpus",
-    4:  "Aedes canadensis",
-    5:  "Aedes infirmatus",
-    6:  "Aedes sollicitans",
-    7:  "Aedes taeniorhynchus",
-    8:  "Aedes triseriatus",
-    9:  "Aedes vexans",
+    0: "Aedes aegypti",
+    1: "Aedes albopictus",
+    2: "Aedes atlanticus",
+    3: "Aedes atropalpus",
+    4: "Aedes canadensis",
+    5: "Aedes infirmatus",
+    6: "Aedes sollicitans",
+    7: "Aedes taeniorhynchus",
+    8: "Aedes triseriatus",
+    9: "Aedes vexans",
     10: "Anopheles crucians",
     11: "Anopheles punctipennis",
     12: "Anopheles quadrimaculatus",
@@ -87,19 +68,53 @@ MOSQ_MAP = {
     15: "Culex salinarius",
     16: "Culex territans",
     17: "Culex Nigripalpus",
-    18: "Culex coronator", 
+    18: "Culex coronator",
     19: "Culex pipiens_restuans",
     20: "Culiseta melanura",
     21: "Orthopodomyia signifera",
     22: "Psorophora ciliata",
     23: "Psorophora columbiae",
     24: "Psorophora ferox",
-    26: "Psoraphora howardii", # Should be Psorophora Howardii
-    27: "Toxorhynchites rutilus",
-    28: "Uranotaenia sapphirina"
+    25: "Psoraphora howardii",
+    26: "Toxorhynchites rutilus",
+    27: "Uranotaenia sapphirina"
 }
 
-# str: int
+# int: str (ALL)
+# MOSQ_MAP = {
+#     0: "Aedes aegypti",
+#     1: "Aedes albopictus",
+#     2: "Aedes atlanticus",
+#     3: "Aedes atropalpus",
+#     4: "Aedes canadensis",
+#     5: "Aedes infirmatus",
+#     6: "Aedes sollicitans",
+#     7: "Aedes taeniorhynchus",
+#     8: "Aedes triseriatus",
+#     9: "Aedes vexans",
+#     10: "Anopheles crucians",
+#     11: "Anopheles punctipennis",
+#     12: "Anopheles quadrimaculatus",
+#     13: "Coquillettidia perturbans",
+#     14: "Culex erraticus",
+#     15: "Culex salinarius",
+#     16: "Culex territans",
+#     17: "Culex Nigripalpus",
+#     18: "Culex coronator",
+#     19: "Culex pipiens_restuans",
+#     20: "Culiseta melanura",
+#     21: "Males",
+#     22: "Orthopodomyia signifera",
+#     23: "Psorophora ciliata",
+#     24: "Psorophora columbiae",
+#     25: "Psorophora ferox",
+#     26: "Psoraphora howardii",
+#     27: "Toxorhynchites rutilus",
+#     28: "Uranotaenia sapphirina"
+# }
+
+
+# NO MALES
 IMG_MAP_REVERSED = {
     "Aedes aegypti": 0,
     "Aedes albopictus": 1,
@@ -122,12 +137,64 @@ IMG_MAP_REVERSED = {
     "Culex coronator": 18,
     "Culex pipiens_restuans": 19,
     "Culiseta melanura": 20,
-    # "Males": 21,
-    "Orthopodomyia signifera": 22,
-    "Psorophora ciliata": 23,
-    "Psorophora columbiae": 24,
-    "Psorophora ferox": 25,
-    "Psoraphora howardii": 26,  # Should be Psorophora howardii
-    "Toxorhynchites rutilus": 27,
-    "Uranotaenia sapphirina": 28,
+    "Orthopodomyia signifera": 21,
+    "Psorophora ciliata": 22,
+    "Psorophora columbiae": 23,
+    "Psorophora ferox": 24,
+    "Psoraphora howardii": 25,  # Should be Psorophora howardii
+    "Toxorhynchites rutilus": 26,
+    "Uranotaenia sapphirina": 27
 }
+
+# str: int (ALL)
+# IMG_MAP_REVERSED = {
+#     "Aedes aegypti": 0,
+#     "Aedes albopictus": 1,
+#     "Aedes atlanticus": 2,
+#     "Aedes atropalpus": 3,
+#     "Aedes canadensis": 4,
+#     "Aedes infirmatus": 5,
+#     "Aedes sollicitans": 6,
+#     "Aedes taeniorhynchus": 7,
+#     "Aedes triseriatus": 8,
+#     "Aedes vexans": 9,
+#     "Anopheles crucians": 10,
+#     "Anopheles punctipennis": 11,
+#     "Anopheles quadrimaculatus": 12,
+#     "Coquillettidia perturbans": 13,
+#     "Culex erraticus": 14,
+#     "Culex salinarius": 15,
+#     "Culex territans": 16,
+#     "Culex Nigripalpus": 17,
+#     "Culex coronator": 18,
+#     "Culex pipiens_restuans": 19,
+#     "Culiseta melanura": 20,
+#     "Males": 21,
+#     "Orthopodomyia signifera": 22,
+#     "Psorophora ciliata": 23,
+#     "Psorophora columbiae": 24,
+#     "Psorophora ferox": 25,
+#     "Psoraphora howardii": 26,  # Should be Psorophora howardii
+#     "Toxorhynchites rutilus": 27,
+#     "Uranotaenia sapphirina": 28
+# }
+
+# ===============================
+# MODEL SETTINGS
+# ===============================
+
+MODEL_NAME = "resnet50" # Options: 18, 34, 50
+NUM_CLASSES = 28 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
+
+# ===============================
+# TRAINING HYPERPARAMETERS
+# ===============================
+
+BATCH_SIZE = 128
+LR = 2e-4
+EPOCHS = 50
+
+SAVE_EPOCHS = 5 # Save every X epochs
+
+# Can check for CPU count with utils.check_device()
+NUM_WORKERS = 8
