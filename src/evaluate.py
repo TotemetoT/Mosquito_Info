@@ -25,6 +25,10 @@ import configs as cfg
 def load_model(m):
     device = cfg.DEVICE
 
+    checkpoint = torch.load(m, map_location=device)
+
+    print(checkpoint["fc.weight"].shape)
+
     model = get_model(
         num_classes=cfg.NUM_CLASSES,
         model_name=cfg.MODEL_NAME
@@ -240,10 +244,11 @@ if __name__ == "__main__":
     final = cfg.FINAL_DIR
     directory = Path(cfg.CHECKPOINT_DIR)
 
-    for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
-        m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
-        print(m)
-        name = f"{cfg.MN}_{(i+1)*5}"
-        evaluate(m, name)
+    # for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
+    #     m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
+    #     print(m)
+    #     name = f"{cfg.MN}_{(i+1)*5}"
+    #     evaluate(m, name)
+    evaluate(f'{cfg.MODELS_DIR}5.pth', "5")
     evaluate(best, "BEST")
     print("DONE!")

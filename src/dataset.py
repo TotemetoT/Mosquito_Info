@@ -35,7 +35,10 @@ class MosquitoDataset(Dataset):
                     class_code = u.identify_img(filename) # (Bool, Class Name)
                 except ValueError:
                     continue
-                if class_code[0] and class_code[1] != "Males": # Load without Males class
+                if class_code[0] and cfg.NUM_CLASSES == 29: # Load with Males Class
+                    img_path = os.path.join(self.root_dir, self.split, filename)
+                    self.samples.append((img_path, int(filename[:2])))
+                elif class_code[0] and class_code[1] != "Males": # Load without Males class
                     img_path = os.path.join(self.root_dir, self.split, filename)
                     self.samples.append((img_path, int(filename[:2])))
 
