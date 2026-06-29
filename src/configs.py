@@ -16,7 +16,7 @@ PROCESSED_DIR = "data/processed"
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-MN = "full_RN18" # Training model name
+MN = "RN152_500" # Training model name
 
 CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
@@ -182,7 +182,7 @@ IMG_MAP_REVERSED = {
 # MODEL SETTINGS
 # ===============================
 
-MODEL_NAME = "resnet18" # Options: 18, 34, 50
+MODEL_NAME = "resnet152" # Options: 18, 34, 50, 101, 152
 NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 
 # ===============================
@@ -190,13 +190,13 @@ NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 # ===============================
 
 BATCH_SIZE = 128
-LR = 5e-5
+LR = 1e-4
 EPOCHS = 500
 
 SAVE_EPOCHS = 50 # Save every X epochs
 
 # Can check for CPU count with utils.check_device()
-NUM_WORKERS = 8
+NUM_WORKERS = 50
 
 if __name__ == "__main__":
     import train as t

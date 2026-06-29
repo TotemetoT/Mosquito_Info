@@ -247,8 +247,7 @@ if __name__ == "__main__":
     # for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
     #     m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
     #     print(m)
-    #     name = f"{cfg.MN}_{(i+1)*5}"
+    #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    evaluate(f'{cfg.MODELS_DIR}5.pth', "5")
     evaluate(best, "BEST")
     print("DONE!")

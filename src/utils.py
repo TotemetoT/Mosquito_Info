@@ -199,4 +199,4 @@ if __name__ == "__main__":
 
     # check_device()
 
-    print(test_dataset("test"))
+    check_device()
