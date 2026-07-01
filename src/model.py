@@ -1,12 +1,9 @@
-# Define Classification Model(s)
-
 import torch.nn as nn
 import torchvision.models as models
 from torchvision.models import *
 
-
 def get_model(num_classes=29, model_name="resnet18", pretrained=True):
-    
+
     if model_name == "resnet18":
         weights = ResNet18_Weights.DEFAULT if pretrained else None
         model = models.resnet18(weights=weights)
@@ -29,5 +26,9 @@ def get_model(num_classes=29, model_name="resnet18", pretrained=True):
 
     else:
         raise ValueError(f"Unsupported model: {model_name}")
+
+    # Replace ImageNet classifier
+    in_features = model.fc.in_features
+    model.fc = nn.Linear(in_features, num_classes)
 
     return model

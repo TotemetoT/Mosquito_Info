@@ -12,24 +12,6 @@ VAL_DIR = f"{DATA_DIR}/val"
 UPLOAD_DIR = "data/uploaded"
 PROCESSED_DIR = "data/processed"
 
-# ====================================
-# CHECKPOINTS (Saving Trained Model)
-# ====================================
-
-MN = "RN152_500" # Training model name
-
-CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
-MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
-FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
-
-MODELS_DIR = f'{CHECKPOINT_DIR}/{MN}_'
-# Logging
-LOG_DIR = f'{CHECKPOINT_DIR}'
-LOG_PATH = f'{LOG_DIR}/logs.csv'
-
-# Classificaiton Report
-CLASSIFICATION_REPORT_DIR = f'{CHECKPOINT_DIR}/{MN}_cr.txt'
-
 # ===============================
 # DEVICE
 # ===============================
@@ -178,27 +160,44 @@ IMG_MAP_REVERSED = {
     "Uranotaenia sapphirina": 28
 }
 
-# ===============================
-# MODEL SETTINGS
-# ===============================
-
-MODEL_NAME = "resnet152" # Options: 18, 34, 50, 101, 152
 NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 
 # ===============================
 # TRAINING HYPERPARAMETERS
 # ===============================
 
-BATCH_SIZE = 128
-LR = 1e-4
-EPOCHS = 500
+class Config:
+    model_name = "resnet50" # Options: 18, 34, 50, 101, 152
 
-SAVE_EPOCHS = 50 # Save every X epochs
+    batch_size = 128
+    lr = 1e-4
+    epochs = 50
+    save_epochs = 50
 
-# Can check for CPU count with utils.check_device()
-NUM_WORKERS = 50
+    num_workers = 50
+
+config = Config()
+
+# ====================================
+# CHECKPOINTS (Saving Trained Model)
+# ====================================
+
+MN = "RN50_Tuning" # Training model name
+
+CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
+MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
+FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
+
+MODELS_DIR = f'{CHECKPOINT_DIR}/{MN}_'
+# Logging
+LOG_DIR = f'{CHECKPOINT_DIR}'
+LOG_PATH = f'{LOG_DIR}/logs.csv'
+
+# Classificaiton Report
+CLASSIFICATION_REPORT_DIR = f'{CHECKPOINT_DIR}/{MN}_cr.txt'
+
 
 if __name__ == "__main__":
     import train as t
 
-    t.main()
+    t.main(config)

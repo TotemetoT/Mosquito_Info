@@ -84,7 +84,7 @@ def validate(
 
     return val_loss, val_acc
 
-def main():
+def main(c):
     device = cfg.DEVICE
 
     # =================================
@@ -102,7 +102,8 @@ def main():
             "val_loss",
             "val_acc",
             "LR",
-            "max_batch_loss"
+            "batch_loss",
+            "batch_size"
         ])
 
     # ===============================
@@ -110,14 +111,14 @@ def main():
     # ===============================
     train_transform = Compose([
         Resize((300,300)),
-        # RandomCrop(224),
-        # RandomHorizontalFlip(),
+        RandomCrop(224),        # Comment if needed
+        # RandomHorizontalFlip(), # Comment if needed
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
     val_transform = Compose([
-        Resize((300,300)),
+        Resize((224, 224)),
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -135,9 +136,9 @@ def main():
 
     train_loader = DataLoader(
         train_dataset,
-        batch_size=cfg.BATCH_SIZE, 
+        batch_size=c.batch_size, 
         shuffle=True,
-        num_workers=cfg.NUM_WORKERS
+        num_workers=c.num_workers
     )
 
     # VALIDATION
@@ -149,9 +150,9 @@ def main():
 
     val_loader = DataLoader(
         val_dataset,
-        batch_size=cfg.BATCH_SIZE, 
+        batch_size=c.batch_size, 
         shuffle=False,
-        num_workers=cfg.NUM_WORKERS
+        num_workers=c.num_workers
     )
 
     # TESTING
@@ -163,9 +164,9 @@ def main():
 
     test_loader = DataLoader(
         test_dataset,
-        batch_size=cfg.BATCH_SIZE, 
+        batch_size=c.batch_size, 
         shuffle=False,
-        num_workers=cfg.NUM_WORKERS
+        num_workers=c.num_workers
     )
 
     # =================================
@@ -173,18 +174,18 @@ def main():
     # =================================
     model = get_model(
         num_classes=cfg.NUM_CLASSES,
-        model_name=cfg.MODEL_NAME,
+        model_name=c.model_name,
     ).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=cfg.LR) 
+    optimizer = optim.Adam(model.parameters(), lr=c.lr) 
 
     # ===============================
     # TRAINING LOOP
     # ===============================
     best_val_acc = 0.0
 
-    for epoch in range(cfg.EPOCHS): 
+    for epoch in range(c.epochs): 
         train_loss, train_acc, max_batch_loss = train_one_epoch(
             model,
             train_loader,
@@ -201,7 +202,7 @@ def main():
         )
 
         print(
-            f"Epoch [{epoch+1}/{cfg.EPOCHS}] " 
+            f"Epoch [{epoch+1}/{c.epochs}] " 
             f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f} | "
             f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}"
         )
@@ -215,24 +216,27 @@ def main():
                 val_loss,
                 val_acc,
                 optimizer.param_groups[0]['lr'],
-                max_batch_loss
+                max_batch_loss,
+                c.batch_size
             ])
 
         eval.plot_acc()
         eval.plot_loss()
         
         # Save every X epochs
-        if (epoch + 1) % cfg.SAVE_EPOCHS == 0:
+        if (epoch + 1) % c.save_epochs == 0:
             torch.save(model.state_dict(), f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth")
 
         # Save best model
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            torch.save(model.state_dict(), cfg.MODEL_DIR)
+        #     torch.save(model.state_dict(), cfg.MODEL_DIR)
 
     model.load_state_dict(
-        torch.load(cfg.MODEL_DIR, weights_only=True)
+        torch.load(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth", weights_only=True)
     )
+
+    eval.evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth", f"Model: val acc = {val_acc}", c)
 
     test_loss, test_acc = validate(
         model,
@@ -246,5 +250,8 @@ def main():
         f"Test Acc: {test_acc:.4f}"
     )
 
+    return best_val_acc
+
 if __name__ == "__main__":
-    main()
+    from configs import config as c
+    main(c)

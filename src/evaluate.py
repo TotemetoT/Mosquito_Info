@@ -22,16 +22,12 @@ import configs as cfg
 # LOAD TRAINED MODEL
 # =====================
 
-def load_model(m):
+def load_model(m,c):
     device = cfg.DEVICE
-
-    checkpoint = torch.load(m, map_location=device)
-
-    print(checkpoint["fc.weight"].shape)
 
     model = get_model(
         num_classes=cfg.NUM_CLASSES,
-        model_name=cfg.MODEL_NAME
+        model_name=c.model_name
     ).to(device)
 
     model.load_state_dict(
@@ -50,7 +46,7 @@ def load_model(m):
 # TEST DATASET DATALOADER
 # ==========================
 
-def test_loader():
+def test_loader(c):
     test_transform = Compose([
         Resize((224, 224)),
         ToTensor(),
@@ -68,7 +64,7 @@ def test_loader():
 
     return DataLoader(
         test_dataset,
-        batch_size=cfg.BATCH_SIZE, 
+        batch_size=c.batch_size, 
         shuffle=False
     )
 
@@ -76,7 +72,7 @@ def test_loader():
 # CLASSIFICATION REPORT
 # ========================
 
-def cr(y_true, y_pred, m):
+def cr(y_true, y_pred, m, c):
     class_names = [
         cfg.MOSQ_MAP[i]
         for i in sorted(cfg.MOSQ_MAP.keys())
@@ -93,10 +89,10 @@ def cr(y_true, y_pred, m):
         f.write(f"CONFIGURATIONS\n")
         f.write("=================================================\n\n")
 
-        f.write(f'MODEL         = {cfg.MODEL_NAME}\n')
-        f.write(f'BATCH SIZE    = {cfg.BATCH_SIZE}\n')
-        f.write(f'LEARNING RATE = {cfg.LR}\n')         
-        f.write(f'EPOCHS        = {cfg.EPOCHS}\n')     
+        f.write(f'MODEL         = {c.model_name}\n')
+        f.write(f'BATCH SIZE    = {c.batch_size}\n')
+        f.write(f'LEARNING RATE = {c.lr}\n')         
+        f.write(f'EPOCHS        = {c.epochs}\n')     
         
         f.write("\n==================================================\n")
         f.write(f"{m}\n")
@@ -110,13 +106,13 @@ def cr(y_true, y_pred, m):
 # EVALUATE MODEL
 # =======================
 
-def evaluate_model(model):
+def evaluate_model(model,c):
     device = cfg.DEVICE
 
     y_true = []
     y_pred = []
 
-    dataloader = test_loader()
+    dataloader = test_loader(c)
 
     with torch.no_grad():
 
@@ -184,25 +180,27 @@ def cm(
 # MAIN EVALUATE FUNCTION
 # ==========================
 
-def evaluate(m, name):
-    model = load_model(m)
+def evaluate(m, name, c):
+    model = load_model(m,c)
 
     y_true, y_pred = evaluate_model(
         model,
+        c
     )
 
     class_names = cr(
         y_true,
         y_pred,
-        m
+        m,
+        c
     )
 
-    cm(
-        y_true=y_true,
-        y_pred=y_pred,
-        class_names=class_names,
-        save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
-    )
+    # cm(
+    #     y_true=y_true,
+    #     y_pred=y_pred,
+    #     class_names=class_names,
+    #     save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
+    # )
 
 # =========================
 # Loss Plot
@@ -240,14 +238,15 @@ def plot_acc():
     plt.savefig(f'{cfg.LOG_DIR}/Accuracy_plot')
 
 if __name__ == "__main__":
+    from configs import config as c
     best = cfg.MODEL_DIR
     final = cfg.FINAL_DIR
     directory = Path(cfg.CHECKPOINT_DIR)
 
     # for i in range(int(cfg.EPOCHS/cfg.SAVE_EPOCHS)):
-    #     m = Path(f'{cfg.MODELS_DIR}{(i+1)*cfg.SAVE_EPOCHS}.pth')
+    #     m = Path(f'{cfg.MODELS_DIR}{(i+1)*c.save_epochs}.pth')
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    evaluate(best, "BEST")
+    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_50.pth", "TEST", c)
     print("DONE!")
