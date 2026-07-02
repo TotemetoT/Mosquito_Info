@@ -111,7 +111,10 @@ def main(c):
     # ===============================
     train_transform = Compose([
         Resize((300,300)),
-        RandomCrop(224),        # Comment if needed
+        RandomResizedCrop(
+            224,
+            scale=(0.8, 1.0),
+            ratio=(0.9, 1.1)),  # Comment if needed
         # RandomHorizontalFlip(), # Comment if needed
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
@@ -178,7 +181,18 @@ def main(c):
     ).to(device)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=c.lr) 
+    optimizer = optim.AdamW(
+        model.parameters(),
+        lr=c.lr,
+        weight_decay=c.lr
+    )
+
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer,
+        T_max=c.epochs
+    )
+
+
 
     # ===============================
     # TRAINING LOOP
@@ -230,7 +244,9 @@ def main(c):
         # Save best model
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-        #     torch.save(model.state_dict(), cfg.MODEL_DIR)
+            torch.save(model.state_dict(), cfg.MODEL_DIR)
+
+        scheduler.step()
 
     model.load_state_dict(
         torch.load(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth", weights_only=True)

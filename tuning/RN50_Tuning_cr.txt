@@ -8,7 +8,7 @@ LEARNING RATE = 0.00013805839784167132
 EPOCHS        = 50
 
 ==================================================
-checkpoints/RN50_Tuning/RN50_Tuning_50.pth
+Trial 0
 ==================================================
 
                            precision    recall  f1-score   support
@@ -56,7 +56,7 @@ LEARNING RATE = 0.009074984366639937
 EPOCHS        = 50
 
 ==================================================
-checkpoints/RN50_Tuning/RN50_Tuning_50.pth
+Trial 1
 ==================================================
 
                            precision    recall  f1-score   support
@@ -1400,7 +1400,7 @@ LEARNING RATE = 0.0001486440247457087
 EPOCHS        = 50
 
 ==================================================
-checkpoints/RN50_Tuning/RN50_Tuning_50.pth
+Trial 29 - BEST
 ==================================================
 
                            precision    recall  f1-score   support
@@ -1438,3 +1438,5 @@ Coquillettidia perturbans       1.00      0.93      0.96        59
                  accuracy                           0.97      1563
                 macro avg       0.97      0.96      0.97      1563
              weighted avg       0.97      0.97      0.97      1563
+
+Best - Trial 29

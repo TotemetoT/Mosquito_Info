@@ -86,19 +86,19 @@ def cr(y_true, y_pred, m, c):
     
     with open(cfg.CLASSIFICATION_REPORT_DIR, "a", encoding="utf-8") as f:
         f.write("==================================================\n")
-        f.write(f"CONFIGURATIONS\n")
-        f.write("=================================================\n\n")
-
-        f.write(f'MODEL         = {c.model_name}\n')
-        f.write(f'BATCH SIZE    = {c.batch_size}\n')
-        f.write(f'LEARNING RATE = {c.lr}\n')         
-        f.write(f'EPOCHS        = {c.epochs}\n')     
-        
-        f.write("\n==================================================\n")
         f.write(f"{m}\n")
         f.write("==================================================\n\n")
 
         f.write(report)
+
+        f.write("\n==================================================\n")
+        f.write(f"CONFIGURATIONS\n")
+        f.write("=================================================\n")
+
+        f.write(f'MODEL         = {c.model_name}\n')
+        f.write(f'BATCH SIZE    = {c.batch_size}\n')
+        f.write(f'LEARNING RATE = {c.lr}\n')         
+        f.write(f'EPOCHS        = {c.epochs}\n\n')     
 
     return class_names
 
@@ -195,12 +195,12 @@ def evaluate(m, name, c):
         c
     )
 
-    # cm(
-    #     y_true=y_true,
-    #     y_pred=y_pred,
-    #     class_names=class_names,
-    #     save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
-    # )
+    cm(
+        y_true=y_true,
+        y_pred=y_pred,
+        class_names=class_names,
+        save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
+    )
 
 # =========================
 # Loss Plot
@@ -248,5 +248,6 @@ if __name__ == "__main__":
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_50.pth", "TEST", c)
+    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
+    evaluate(best, "BEST", c)
     print("DONE!")

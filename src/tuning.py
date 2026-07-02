@@ -11,17 +11,18 @@ def objective(trial):
 
     c.lr = trial.suggest_float(
         "lr",
+        1e-5,
         1e-4,
-        1e-3,
         log=True
     )
 
     c.batch_size = trial.suggest_categorical(
         "batch_size",
-        [32, 64, 128]
+        [48, 64, 96]
     )
 
-    c.epochs = 50
+    c.epochs = 100
+    c.save_epochs = c.epochs
 
     accuracy = train.main(c)
 
