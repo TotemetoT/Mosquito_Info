@@ -113,7 +113,6 @@ def split_data(split, dir):
             val_files -= 1
             print(f'Moving {f} to {val_dir} | {val_files}')
 
-
 # ======================================
 # IMAGE IDENTIFICATION (FILENAME-BASED)
 # ======================================
@@ -229,6 +228,32 @@ def vectorize(split, savefile):
         "images": torch.cat(imgs),
         "labels": torch.cat(labels)
     }, savefile)
+
+# ==============================
+# FIND BEST EPOCH
+# ==============================
+
+def best_epoch(file):
+    """
+    Finds the epoch that was saved as the best model from training
+
+    @param file: string, logs.csv path
+    @return tuple: (int, float)
+    """
+    import csv
+    with open(file, "r") as f:
+        reader = csv.reader(f)
+        next(reader)
+
+        best_val, best_epoch = 0.0, 0
+        for line in reader:
+            epoch, _, _, _, val, _, _, _ = line
+            if float(val) >= best_val:
+                best_val = float(val)
+                best_epoch = int(epoch)
+        
+        return (best_epoch, best_val)
+    
 
 if __name__ == "__main__":
 

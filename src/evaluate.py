@@ -207,7 +207,7 @@ def evaluate(m, name, c):
 # =========================
 
 def plot_loss():
-    df = pd.read_csv(cfg.LOG_PATH)
+    df = pd.read_csv(cfg.LOG_PATH, skiprows=[1,2,3]) # Skiprows allows for better viewing of the plot
     epochs = df["epoch"]
 
     plt.figure()
@@ -225,7 +225,7 @@ def plot_loss():
 # =========================
 
 def plot_acc():
-    df = pd.read_csv(cfg.LOG_PATH)
+    df = pd.read_csv(cfg.LOG_PATH, skiprows=[1,2,3]) # Skiprows allows for better viewing of the plot
     epochs = df["epoch"]
     plt.figure()
     plt.plot(epochs, df["train_acc"], label="Train Accuracy")
@@ -248,6 +248,7 @@ if __name__ == "__main__":
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
-    evaluate(best, "BEST", c)
-    print("DONE!")
+    # evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
+    # evaluate(best, "BEST", c)
+    # print("DONE!")
+    plot_loss()
