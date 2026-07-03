@@ -8,6 +8,7 @@ import shutil
 
 from model import get_model
 import configs as cfg
+from configs import config as c
 
 # ==============================
 # CHECK FOR DEVICE (GPU/CPU)
@@ -164,7 +165,6 @@ def test_dataset(split):
 
     image, _ = dataset[random.randint(0, len(dataset)-1)]
 
-    from collections import Counter
 
     labels = [label for _, label in dataset.samples]
 
@@ -178,9 +178,57 @@ def test_dataset(split):
         print(l, ":",label_dict[l])
     print(len(labels))
 
-    # img = image.permute(1, 2, 0).numpy()
-    # plt.imshow(img)
-    # plt.show()
+def vectorize(split, savefile):
+    from dataset import MosquitoDataset
+    from torchvision.transforms import Compose, Resize, RandomCrop, ToTensor, Normalize
+    from torch.utils.data import DataLoader
+
+    # ===============================
+    # IMAGE TRANSFORMATIONS
+    # ===============================
+
+    if split == "train":
+        transform = Compose([
+            Resize((300,300)),
+            RandomCrop(224),        # Comment if needed
+            # RandomHorizontalFlip(), # Comment if needed
+            ToTensor(),
+            Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        ])
+    else:
+        transform = Compose([
+            Resize((224, 224)),
+            ToTensor(),
+            Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        ])
+    
+    # ==============================
+    # Load & Vectorize Dataset
+    # ==============================
+
+    dataset = MosquitoDataset(
+        root_dir=cfg.DATA_DIR,
+        split=split,
+        transform=transform
+    )
+
+    dataloader = DataLoader(
+        dataset,
+        batch_size=c.batch_size, 
+        shuffle=True,
+        num_workers=c.num_workers
+        )
+    
+    imgs, labels = [], []
+
+    for img, label in dataloader:
+        imgs.append(img)
+        labels.append(label)
+
+    torch.save({
+        "images": torch.cat(imgs),
+        "labels": torch.cat(labels)
+    }, savefile)
 
 if __name__ == "__main__":
 
@@ -197,6 +245,7 @@ if __name__ == "__main__":
     #     split = [.70,.15,.15]
     #     split_data(split, src)
 
-    # check_device()
-
-    check_device()
+    for split in ["train", "val", "test"]:
+        print(split)
+        savefile = Path(f"data/vectorized/{split}.pth")
+        vectorize(split, savefile)
