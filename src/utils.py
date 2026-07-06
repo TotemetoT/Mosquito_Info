@@ -270,7 +270,9 @@ if __name__ == "__main__":
     #     split = [.70,.15,.15]
     #     split_data(split, src)
 
-    for split in ["train", "val", "test"]:
-        print(split)
-        savefile = Path(f"data/vectorized/{split}.pth")
-        vectorize(split, savefile)
+    # for split in ["train", "val", "test"]:
+    #     print(split)
+    #     savefile = Path(f"data/vectorized/{split}.pth")
+    #     vectorize(split, savefile)
+
+    print(best_epoch(cfg.LOG_PATH))

@@ -184,7 +184,7 @@ def main(c):
     optimizer = optim.AdamW(
         model.parameters(),
         lr=c.lr,
-        weight_decay=5e-5 # Play around with this - Try values such as 1e-5, 5e-6, 5e-5 and other low numbers
+        weight_decay=c.weight_decay
     )
 
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(

@@ -11,14 +11,21 @@ def objective(trial):
 
     c.lr = trial.suggest_float(
         "lr",
-        1e-5,
+        1e-6,
         1e-4,
         log=True
     )
 
     c.batch_size = trial.suggest_categorical(
         "batch_size",
-        [48, 64, 96]
+        [40, 48, 56]
+    )
+
+    c.weight_decay = trial.suggest_float(
+        "weight_decay",
+        1e-7,
+        1e-5,
+        log=True
     )
 
     c.epochs = 100

@@ -91,14 +91,15 @@ def cr(y_true, y_pred, m, c):
 
         f.write(report)
 
-        f.write("\n==================================================\n")
+        f.write("\n================================================\n")
         f.write(f"CONFIGURATIONS\n")
-        f.write("=================================================\n")
+        f.write("==================================================\n")
 
         f.write(f'MODEL         = {c.model_name}\n')
         f.write(f'BATCH SIZE    = {c.batch_size}\n')
         f.write(f'LEARNING RATE = {c.lr}\n')         
-        f.write(f'EPOCHS        = {c.epochs}\n\n')     
+        f.write(f'EPOCHS        = {c.epochs}\n')
+        f.write(f'WEIGHT DECAY  = {c.weight_decay}\n\n')
 
     return class_names
 
@@ -207,7 +208,7 @@ def evaluate(m, name, c):
 # =========================
 
 def plot_loss():
-    df = pd.read_csv(cfg.LOG_PATH, skiprows=[1,2,3]) # Skiprows allows for better viewing of the plot
+    df = pd.read_csv(cfg.LOG_PATH) # Skiprows allows for better viewing of the plot (skiprows=[1,2,3])
     epochs = df["epoch"]
 
     plt.figure()
@@ -225,7 +226,7 @@ def plot_loss():
 # =========================
 
 def plot_acc():
-    df = pd.read_csv(cfg.LOG_PATH, skiprows=[1,2,3]) # Skiprows allows for better viewing of the plot
+    df = pd.read_csv(cfg.LOG_PATH) # Skiprows allows for better viewing of the plot (skiprows=[1,2,3])
     epochs = df["epoch"]
     plt.figure()
     plt.plot(epochs, df["train_acc"], label="Train Accuracy")
@@ -248,7 +249,6 @@ if __name__ == "__main__":
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    # evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
-    # evaluate(best, "BEST", c)
-    # print("DONE!")
-    plot_loss()
+    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
+    evaluate(best, "BEST", c)
+    print("DONE!")
