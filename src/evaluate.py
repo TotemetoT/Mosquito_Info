@@ -249,6 +249,6 @@ if __name__ == "__main__":
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_100.pth", "FINAL", c)
+    evaluate(final, "FINAL", c)
     evaluate(best, "BEST", c)
     print("DONE!")

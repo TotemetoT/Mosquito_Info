@@ -117,13 +117,15 @@ def split_data(split, dir):
 # IMAGE IDENTIFICATION (FILENAME-BASED)
 # ======================================
 
-def identify_img(img):
+def identify_img(img, eval=False):
     """
     Identifies mosquito species using file name
 
     @param img: image file name (string)
     @return tuple: (bool, species name or error message)
     """
+    if eval: img = img[24:] # Removes fill file path
+
     img = str(img)
     if img[0] == "0":
         mosq = int(img[1])
@@ -275,4 +277,4 @@ if __name__ == "__main__":
     #     savefile = Path(f"data/vectorized/{split}.pth")
     #     vectorize(split, savefile)
 
-    print(best_epoch(cfg.LOG_PATH))
+    print(identify_img("data/mosquito_data/test/02194.jpg", True))

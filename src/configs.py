@@ -183,11 +183,11 @@ config = Config()
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-MN = "RN50_BEST_PARAMS" # Training model name
+MN = "RN50_FINAL_MODEL" # Training model name
 
 CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
-FINAL_DIR = f'{CHECKPOINT_DIR}/FINAL_model.pth'
+FINAL_DIR = f'{CHECKPOINT_DIR}/{MN}_100.pth'
 
 MODELS_DIR = f'{CHECKPOINT_DIR}/{MN}_'
 # Logging
