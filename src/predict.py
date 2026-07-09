@@ -33,13 +33,25 @@ def predict(img):
 
         p = torch.softmax(out, dim=1)
 
-        confidence, pred = torch.max(p, dim=1)
+        top_probs, top_preds = torch.topk(p, k=5, dim=1)
 
-    species = u.identify_img(pred.item())[1]
+    top_probs = top_probs.squeeze(0).tolist()
+    top_preds = top_preds.squeeze(0).tolist()
     
-    return actual, (pred.item(), species), confidence.item()
+    return actual, top_preds, top_probs
 
 if __name__ == "__main__":
-    pred = predict("data/mosquito_data/test/02194.jpg")
+    from pathlib import Path
+    import random
 
-    print(f'Actual: {pred[0]}\nPredicted: {pred[1]}\nConfidence: {pred[2]}')
+    test_dir = Path("data/mosquito_data/test")
+
+    image = random.choice(list(test_dir.glob("*.jpg")))
+
+    print(str(image))
+
+    pred = predict(str(image))
+
+    print("Actual:", pred[0])
+    for rank, (cls, prob) in enumerate(zip(pred[1], pred[2]), start=1):
+        print(f"     {rank}. {cfg.MOSQ_MAP[cls]:<30}: {100*prob:.5f}%")
