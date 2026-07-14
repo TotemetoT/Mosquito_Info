@@ -113,6 +113,27 @@ def split_data(split, dir):
             val_files -= 1
             print(f'Moving {f} to {val_dir} | {val_files}')
 
+def separate_data(dir, out):
+    from pathlib import Path
+    import shutil
+
+    dir = Path(dir)
+    out = Path(out)
+
+    out.mkdir(parents=True, exist_ok=True)
+
+    for file in dir.iterdir():
+        print(file)
+        if file.is_file():
+            # Extract the last three digits of the filename
+            # Example: 01007.jpg -> 007 -> 7
+            image_num = int(file.stem[-3:])
+
+            # Move every 7th image to the output directory
+            if int(image_num) % 7 == 0:
+                print(f"Moving {file.name} to test set")
+                shutil.move(str(file), str(out / file.name))
+
 # ======================================
 # IMAGE IDENTIFICATION (FILENAME-BASED)
 # ======================================
@@ -124,7 +145,7 @@ def identify_img(img, eval=False):
     @param img: image file name (string)
     @return tuple: (bool, species name or error message)
     """
-    if eval: img = img[24:] # Removes fill file path
+    if eval: img = img#[24:] Removes fill file path
 
     img = str(img)
     if img[0] == "0":
@@ -277,4 +298,12 @@ if __name__ == "__main__":
     #     savefile = Path(f"data/vectorized/{split}.pth")
     #     vectorize(split, savefile)
 
-    print(identify_img("data/mosquito_data/test/02194.jpg", True))
+    # print(identify_img("data/mosquito_data/test/02194.jpg", True))
+
+    fin  = "data/processed/Aedes aegypti"
+    fout = "data/processed/Aedes aegypti/original"
+
+    for m in mosquitos:
+        fin  = f"data/processed/{m}"
+        fout = f"data/processed/{m}/original"
+        separate_data(fin, fout)

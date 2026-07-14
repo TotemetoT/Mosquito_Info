@@ -12,7 +12,7 @@ def predict(img):
     m = load_model(cfg.FINAL_DIR,c)
     m.eval()
 
-    actual = u.identify_img(img, eval=True)[1]
+    actual = u.identify_img(img[-9:-4], eval=True)[1]
 
     transform = Compose([
         Resize((224, 224)),
@@ -44,9 +44,11 @@ if __name__ == "__main__":
     from pathlib import Path
     import random
 
-    test_dir = Path("data/mosquito_data/test")
+    # test_dir = Path("data/mosquito_data/test")
 
-    image = random.choice(list(test_dir.glob("*.jpg")))
+    # image = random.choice(list(test_dir.glob("*.jpg")))
+
+    image = Path("data/external/09999.jpg")
 
     print(str(image))
 
