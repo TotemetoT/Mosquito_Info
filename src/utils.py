@@ -123,7 +123,6 @@ def separate_data(dir, out):
     out.mkdir(parents=True, exist_ok=True)
 
     for file in dir.iterdir():
-        print(file)
         if file.is_file():
             # Extract the last three digits of the filename
             # Example: 01007.jpg -> 007 -> 7
@@ -133,6 +132,19 @@ def separate_data(dir, out):
             if int(image_num) % 7 == 0:
                 print(f"Moving {file.name} to test set")
                 shutil.move(str(file), str(out / file.name))
+
+def move_files(dir,out):
+    from pathlib import Path
+    import shutil
+
+    dir = Path(dir)
+    out = Path(out)
+
+    out.mkdir(parents=True, exist_ok=True)
+
+    for file in dir.iterdir():
+        if file.is_file():
+            shutil.move(str(file), str(out / file.name))
 
 # ======================================
 # IMAGE IDENTIFICATION (FILENAME-BASED)
@@ -300,10 +312,10 @@ if __name__ == "__main__":
 
     # print(identify_img("data/mosquito_data/test/02194.jpg", True))
 
-    fin  = "data/processed/Aedes aegypti"
-    fout = "data/processed/Aedes aegypti/original"
+    # fin  = "data/processed/Aedes aegypti"
+    # fout = "data/processed/Aedes aegypti/original"
 
     for m in mosquitos:
         fin  = f"data/processed/{m}"
-        fout = f"data/processed/{m}/original"
-        separate_data(fin, fout)
+        fout = f"data/processed/{m}/augmented"
+        move_files(fin, fout)
