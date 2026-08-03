@@ -4,7 +4,7 @@
 # DATA PATHS
 # ===============================
 
-DATA_DIR = "data/mosquito_data"
+DATA_DIR = "data/split"
 TRAIN_DIR = f"{DATA_DIR}/train"
 TEST_DIR = f"{DATA_DIR}/test"
 VAL_DIR = f"{DATA_DIR}/val"
@@ -169,11 +169,11 @@ NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 class Config:
     model_name = "resnet50" # Options: 18, 34, 50, 101, 152
 
-    batch_size = 48
-    lr = 1.0841e-5 # 9.791328150147311e-5
+    batch_size = 128
+    lr = 4.534e-4
     epochs = 100
     save_epochs = 100
-    weight_decay = 1.8268e-7
+    weight_decay = 2.7857e-5
 
     num_workers = 50
 
@@ -183,7 +183,7 @@ config = Config()
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-MN = "RN50_FINAL_MODEL" # Training model name
+MN = "RN50_T2" # Training model name
 
 CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"
