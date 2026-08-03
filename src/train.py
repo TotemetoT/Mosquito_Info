@@ -3,6 +3,7 @@
 import os
 import csv
 
+import optuna
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -84,7 +85,7 @@ def validate(
 
     return val_loss, val_acc
 
-def main(c):
+def main(c, trial=None):
     device = cfg.DEVICE
 
     # =================================
@@ -112,16 +113,25 @@ def main(c):
     train_transform = Compose([
         Resize((300,300)),
         RandomResizedCrop(
-            224,
+            244, #TODO
             scale=(0.8, 1.0),
             ratio=(0.9, 1.1)),  # Comment if needed
-        # RandomHorizontalFlip(), # Comment if needed
+        # RandomHorizontalFlip(), # Already have 90/180/270 rotations in dataset
+        transforms.RandomRotation(15),
+        transforms.ColorJitter(
+            brightness=0.2,
+            contrast=0.2,
+            saturation=0.2,
+            hue=0.05
+        ),
+        transforms.RandomPerspective(distortion_scale=0.2, p=0.3),
         ToTensor(),
+        transforms.RandomErasing(p=0.25),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
     val_transform = Compose([
-        Resize((224, 224)),
+        Resize((224, 224)), #TODO Changed for testing purposes
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -158,19 +168,19 @@ def main(c):
         num_workers=c.num_workers
     )
 
-    # TESTING
-    test_dataset = MosquitoDataset(
-        root_dir = cfg.DATA_DIR,
-        split = "test",
-        transform = val_transform
-    )
+    # # TESTING
+    # test_dataset = MosquitoDataset(
+    #     root_dir = cfg.DATA_DIR,
+    #     split = "test",
+    #     transform = val_transform
+    # )
 
-    test_loader = DataLoader(
-        test_dataset,
-        batch_size=c.batch_size, 
-        shuffle=False,
-        num_workers=c.num_workers
-    )
+    # test_loader = DataLoader(
+    #     test_dataset,
+    #     batch_size=c.batch_size, 
+    #     shuffle=False,
+    #     num_workers=c.num_workers
+    # )
 
     # =================================
     # CREATE MODEL, LOSS, & OPTIMIZER
@@ -215,6 +225,15 @@ def main(c):
             device
         )
 
+        # -----------------------------------
+        # Optuna pruning
+        # -----------------------------------
+        if trial is not None:
+            trial.report(val_acc, epoch)
+
+            if trial.should_prune():
+                raise optuna.TrialPruned()
+
         print(
             f"Epoch [{epoch+1}/{c.epochs}] " 
             f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f} | "
@@ -234,8 +253,8 @@ def main(c):
                 c.batch_size
             ])
 
-        eval.plot_acc()
-        eval.plot_loss()
+        # eval.plot_acc()
+        # eval.plot_loss()
         
         # Save every X epochs
         if (epoch + 1) % c.save_epochs == 0:
@@ -249,22 +268,26 @@ def main(c):
         scheduler.step()
 
     model.load_state_dict(
-        torch.load(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth", weights_only=True)
+        torch.load(cfg.FINAL_DIR, weights_only=True)
+    )
+    model.load_state_dict(
+        torch.load(cfg.MODEL_DIR, weights_only=True)
     )
 
-    eval.evaluate(f"{cfg.CHECKPOINT_DIR}/{cfg.MN}_{epoch+1}.pth", f"Model: val acc = {val_acc}", c)
+    eval.evaluate(cfg.FINAL_DIR, f"Model: val acc = {val_acc}", c)
+    eval.evaluate(cfg.MODEL_DIR, f"Model: val acc = {val_acc}", c)
 
-    test_loss, test_acc = validate(
-        model,
-        test_loader,
-        criterion,
-        device
-    )
+    # test_loss, test_acc = validate(
+    #     model,
+    #     test_loader,
+    #     criterion,
+    #     device
+    # )
 
-    print(
-        f"Test Loss: {test_loss:.4f}, "
-        f"Test Acc: {test_acc:.4f}"
-    )
+    # print(
+    #     f"Test Loss: {test_loss:.4f}, "
+    #     f"Test Acc: {test_acc:.4f}"
+    # )
 
     return best_val_acc
 

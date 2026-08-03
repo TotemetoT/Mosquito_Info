@@ -167,13 +167,13 @@ NUM_CLASSES = 29 # 29 TOTAL (FULL DATASET) -- 28 w/o "Males" class
 # ===============================
 
 class Config:
-    model_name = "resnet50" # Options: 18, 34, 50, 101, 152
+    model_name = "resnet34" # Options: 18, 34, 50, 101, 152
 
-    batch_size = 128
-    lr = 4.534e-4
+    batch_size = 40
+    lr = 2.122628428680084e-05
     epochs = 100
     save_epochs = 100
-    weight_decay = 2.7857e-5
+    weight_decay = 4.31020798638557e-06
 
     num_workers = 50
 
@@ -183,7 +183,7 @@ config = Config()
 # CHECKPOINTS (Saving Trained Model)
 # ====================================
 
-MN = "RN50_T2" # Training model name
+MN = "RN34_t3" # Training model name
 
 CHECKPOINT_DIR = f"checkpoints/{MN}" # Working path - Change for each trained model
 MODEL_DIR = f"{CHECKPOINT_DIR}/BEST_model.pth"

@@ -1,0 +1,49 @@
+==================================================
+checkpoints/RN50_T2/RN50_T2_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.86      0.86      0.86         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       1.00      1.00      1.00        14
+        Culiseta melanura       1.00      1.00      1.00        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      1.00      1.00         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.97       251
+                macro avg       0.97      0.97      0.97       251
+             weighted avg       0.97      0.97      0.97       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 128
+LEARNING RATE = 0.0004534
+EPOCHS        = 100
+WEIGHT DECAY  = 2.7857e-05
+

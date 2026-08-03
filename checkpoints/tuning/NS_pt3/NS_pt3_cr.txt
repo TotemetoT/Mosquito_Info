@@ -1,0 +1,1421 @@
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       0.88      1.00      0.93         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.83      0.71      0.77         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       0.80      1.00      0.89         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       0.80      1.00      0.89         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      0.95      0.92        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       1.00      0.57      0.73         7
+          Culex coronator       0.70      0.88      0.78         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.88      0.93         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      0.88      0.93         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.90      1.00      0.95         9
+
+                 accuracy                           0.93       251
+                macro avg       0.94      0.92      0.92       251
+             weighted avg       0.93      0.93      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 3.934349623663959e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.0198824062073675e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.67      0.57      0.62         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       0.80      1.00      0.89         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.86      1.00      0.93        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       1.00      0.71      0.83         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.95      0.94      0.94       251
+             weighted avg       0.95      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 48
+LEARNING RATE = 0.00011818640555062605
+EPOCHS        = 100
+WEIGHT DECAY  = 4.524848419688888e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      0.88      0.93         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.71      0.71      0.71         7
+         Aedes infirmatus       0.83      1.00      0.91         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      0.93      0.97        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       0.89      1.00      0.94         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       1.00      0.86      0.92         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       1.00      1.00      1.00        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.96       251
+                macro avg       0.95      0.95      0.95       251
+             weighted avg       0.96      0.96      0.96       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 64
+LEARNING RATE = 0.00018652604713299036
+EPOCHS        = 100
+WEIGHT DECAY  = 4.0375328583282815e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.71      0.83         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.80      1.00      0.89         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       0.89      1.00      0.94         8
+Anopheles quadrimaculatus       1.00      0.75      0.86         8
+Coquillettidia perturbans       1.00      0.90      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.86      1.00      0.93        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.75      0.75      0.75         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.75      0.86         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.82      1.00      0.90         9
+
+                 accuracy                           0.92       251
+                macro avg       0.92      0.91      0.91       251
+             weighted avg       0.93      0.92      0.92       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 2.2713420383782764e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 7.1882119547499155e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       1.00      0.57      0.73         7
+          Culex coronator       0.64      0.88      0.74         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.60      0.75         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.96       251
+                macro avg       0.96      0.95      0.95       251
+             weighted avg       0.96      0.96      0.96       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 48
+LEARNING RATE = 0.000374775615765596
+EPOCHS        = 100
+WEIGHT DECAY  = 6.091931577982063e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       0.89      1.00      0.94         8
+   Anopheles punctipennis       1.00      0.88      0.93         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.78      0.88      0.82         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.95      0.94      0.94       251
+             weighted avg       0.95      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.0001392818768528485
+EPOCHS        = 100
+WEIGHT DECAY  = 9.202185079626518e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       0.88      1.00      0.93         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      0.95      0.92        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.78      0.88      0.82         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.75      0.86         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       1.00      0.80      0.89         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.82      1.00      0.90         9
+
+                 accuracy                           0.93       251
+                macro avg       0.93      0.92      0.92       251
+             weighted avg       0.94      0.93      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 2.402938400831366e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 2.3553784814419828e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       0.88      1.00      0.93         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.71      0.71      0.71         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.83      1.00      0.91        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      0.90      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      0.95      0.95        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.78      0.88      0.82         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.88      0.93         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       1.00      0.67      0.80         3
+     Psorophora columbiae       0.88      1.00      0.93         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.90      1.00      0.95         9
+
+                 accuracy                           0.93       251
+                macro avg       0.93      0.91      0.92       251
+             weighted avg       0.93      0.93      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 64
+LEARNING RATE = 1.809181965481389e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 5.682660609905859e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.71      0.71      0.71         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      0.90      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       0.89      0.89      0.89         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.83      1.00      0.91        10
+                    Males       1.00      0.88      0.93         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.60      0.75         5
+   Uranotaenia sapphirina       0.90      1.00      0.95         9
+
+                 accuracy                           0.94       251
+                macro avg       0.94      0.92      0.93       251
+             weighted avg       0.94      0.94      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 48
+LEARNING RATE = 1.8483736671200484e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 6.165966169086075e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      0.88      0.93         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       0.94      1.00      0.97        15
+         Culex salinarius       1.00      0.95      0.97        19
+          Culex territans       1.00      1.00      1.00         9
+        Culex Nigripalpus       1.00      0.86      0.92         7
+          Culex coronator       0.89      1.00      0.94         8
+   Culex pipiens_restuans       0.93      1.00      0.97        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.96       251
+                macro avg       0.97      0.96      0.96       251
+             weighted avg       0.97      0.96      0.96       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 64
+LEARNING RATE = 0.00029278276230411816
+EPOCHS        = 100
+WEIGHT DECAY  = 9.075546730864614e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.83      1.00      0.91        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       0.88      0.88      0.88         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      0.75      0.86         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.86      1.00      0.93        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.75      0.86      0.80         7
+          Culex coronator       0.83      0.62      0.71         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.94       251
+                macro avg       0.94      0.93      0.93       251
+             weighted avg       0.94      0.94      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 4.1260900167311264e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.0182594480220537e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.75      0.86         8
+   Anopheles punctipennis       0.80      1.00      0.89         8
+Anopheles quadrimaculatus       0.86      0.75      0.80         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.86      0.86      0.86         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      0.89      0.94         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       1.00      0.80      0.89         5
+   Toxorhynchites rutilus       0.80      0.80      0.80         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.94       251
+                macro avg       0.94      0.93      0.93       251
+             weighted avg       0.94      0.94      0.94       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 8.639458541867075e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.0439398694588608e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       0.94      1.00      0.97        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.67      0.57      0.62         7
+          Culex coronator       0.86      0.75      0.80         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.95      0.94      0.94       251
+             weighted avg       0.95      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 5.541438221622184e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 2.135059137230988e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       0.88      1.00      0.93         7
+         Aedes atlanticus       0.89      1.00      0.94         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.62      0.71      0.67         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       0.89      1.00      0.94         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       0.88      0.78      0.82         9
+        Culex Nigripalpus       0.60      0.43      0.50         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.75      0.86         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.82      1.00      0.90         9
+
+                 accuracy                           0.92       251
+                macro avg       0.92      0.91      0.91       251
+             weighted avg       0.93      0.92      0.92       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 1.0289220248319646e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.711784587260934e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       0.88      1.00      0.93         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       1.00      0.88      0.93         8
+Anopheles quadrimaculatus       0.89      1.00      0.94         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       1.00      1.00      1.00        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.83      0.71      0.77         7
+          Culex coronator       0.80      1.00      0.89         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       1.00      1.00      1.00        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      1.00      1.00         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.96       251
+                macro avg       0.96      0.96      0.96       251
+             weighted avg       0.97      0.96      0.96       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.00017026813988687008
+EPOCHS        = 100
+WEIGHT DECAY  = 3.099029320950667e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.86      1.00      0.93        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       1.00      0.57      0.73         7
+          Culex coronator       0.78      0.88      0.82         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.88      0.93         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.90      1.00      0.95         9
+
+                 accuracy                           0.94       251
+                macro avg       0.95      0.93      0.94       251
+             weighted avg       0.95      0.94      0.94       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 6.161270887134207e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.5258359204200353e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      0.93      0.97        15
+         Culex salinarius       0.90      0.95      0.92        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.67      0.57      0.62         7
+          Culex coronator       0.67      0.75      0.71         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.93       251
+                macro avg       0.93      0.92      0.92       251
+             weighted avg       0.93      0.93      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 3.709100395910191e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 3.117517800110586e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      1.00      1.00         9
+        Culex Nigripalpus       1.00      0.71      0.83         7
+          Culex coronator       0.70      0.88      0.78         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.97       251
+                macro avg       0.97      0.96      0.97       251
+             weighted avg       0.97      0.97      0.97       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.0004884269020639496
+EPOCHS        = 100
+WEIGHT DECAY  = 9.98483700995638e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       0.89      1.00      0.94         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      1.00      1.00         9
+        Culex Nigripalpus       1.00      0.86      0.92         7
+          Culex coronator       0.89      1.00      0.94         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.97       251
+                macro avg       0.97      0.96      0.96       251
+             weighted avg       0.97      0.97      0.97       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 64
+LEARNING RATE = 0.00012208997405052337
+EPOCHS        = 100
+WEIGHT DECAY  = 1.3975090893939995e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       0.80      1.00      0.89         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       0.89      1.00      0.94         8
+   Anopheles punctipennis       1.00      0.88      0.93         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       0.91      1.00      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.83      0.71      0.77         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       0.93      0.93      0.93        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      0.60      0.75         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.95      0.94      0.94       251
+             weighted avg       0.95      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 48
+LEARNING RATE = 0.00022923620219307062
+EPOCHS        = 100
+WEIGHT DECAY  = 3.0701130486193466e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.83      0.71      0.77         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.80      1.00      0.89         8
+             Aedes vexans       0.80      1.00      0.89         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.83      1.00      0.90        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       1.00      0.86      0.92         7
+          Culex coronator       0.83      0.62      0.71         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.60      0.75         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.94       251
+                macro avg       0.95      0.93      0.94       251
+             weighted avg       0.95      0.94      0.94       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 8.485998690224716e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 4.291409349765074e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.60      0.75         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      0.95      0.92        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.75      0.75      0.75         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.94       251
+                macro avg       0.95      0.93      0.93       251
+             weighted avg       0.94      0.94      0.94       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.00013477022223633539
+EPOCHS        = 100
+WEIGHT DECAY  = 2.835022610281002e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.86      0.86      0.86         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       1.00      1.00      1.00        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       1.00      0.71      0.83         7
+          Culex coronator       0.80      1.00      0.89         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       0.75      1.00      0.86         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.97       251
+                macro avg       0.97      0.96      0.96       251
+             weighted avg       0.97      0.97      0.97       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.00016805556933043042
+EPOCHS        = 100
+WEIGHT DECAY  = 1.9366714002595034e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.83      0.71      0.77         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       0.89      1.00      0.94         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      0.90      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.95      0.95      0.95        19
+          Culex territans       1.00      1.00      1.00         9
+        Culex Nigripalpus       0.67      0.57      0.62         7
+          Culex coronator       0.75      0.75      0.75         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.94       251
+                macro avg       0.94      0.93      0.93       251
+             weighted avg       0.94      0.94      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 7.940040555680708e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.2512764716477848e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      0.88      0.93         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       0.94      1.00      0.97        15
+         Culex salinarius       0.95      1.00      0.97        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.70      0.88      0.78         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.96      0.94      0.95       251
+             weighted avg       0.95      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.00027795962057724984
+EPOCHS        = 100
+WEIGHT DECAY  = 7.88431834945209e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.71      0.83         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      1.00      1.00         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.80      1.00      0.89         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      0.95      0.92        19
+          Culex territans       1.00      0.89      0.94         9
+        Culex Nigripalpus       1.00      0.71      0.83         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       0.87      0.93      0.90        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       0.88      1.00      0.93         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.95       251
+                macro avg       0.96      0.95      0.95       251
+             weighted avg       0.96      0.95      0.95       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 0.00017266329688973066
+EPOCHS        = 100
+WEIGHT DECAY  = 3.6237345280514124e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      1.00      1.00         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.88      1.00      0.94        15
+        Aedes triseriatus       1.00      1.00      1.00         8
+             Aedes vexans       1.00      1.00      1.00         8
+       Anopheles crucians       1.00      0.88      0.93         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      0.88      0.93         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       0.94      1.00      0.97        15
+         Culex salinarius       0.86      0.95      0.90        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.80      0.57      0.67         7
+          Culex coronator       0.67      0.75      0.71         8
+   Culex pipiens_restuans       0.92      0.86      0.89        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      0.88      0.93         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       0.83      1.00      0.91         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       0.90      1.00      0.95         9
+
+                 accuracy                           0.92       251
+                macro avg       0.93      0.92      0.92       251
+             weighted avg       0.93      0.92      0.92       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 3.319893330619429e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 2.665732431435497e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.71      0.83         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       1.00      1.00      1.00         8
+         Aedes atropalpus       0.80      0.57      0.67         7
+         Aedes canadensis       0.86      0.86      0.86         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       0.90      1.00      0.95         9
+     Aedes taeniorhynchus       0.83      1.00      0.91        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       0.89      1.00      0.94         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       0.89      1.00      0.94         8
+Anopheles quadrimaculatus       1.00      0.75      0.86         8
+Coquillettidia perturbans       1.00      0.90      0.95        10
+          Culex erraticus       1.00      1.00      1.00        15
+         Culex salinarius       0.90      1.00      0.95        19
+          Culex territans       1.00      0.78      0.88         9
+        Culex Nigripalpus       0.71      0.71      0.71         7
+          Culex coronator       0.75      0.75      0.75         8
+   Culex pipiens_restuans       1.00      0.93      0.96        14
+        Culiseta melanura       0.91      1.00      0.95        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       0.90      1.00      0.95         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       0.89      1.00      0.94         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      0.80      0.89         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.93       251
+                macro avg       0.94      0.92      0.92       251
+             weighted avg       0.93      0.93      0.93       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 80
+LEARNING RATE = 5.565726366080729e-05
+EPOCHS        = 100
+WEIGHT DECAY  = 1.8259217505453347e-06
+
+==================================================
+checkpoints/NS_pt3/NS_pt3_100.pth
+==================================================
+
+                           precision    recall  f1-score   support
+
+            Aedes aegypti       1.00      0.86      0.92         7
+         Aedes albopictus       1.00      1.00      1.00         7
+         Aedes atlanticus       0.88      0.88      0.88         8
+         Aedes atropalpus       0.83      0.71      0.77         7
+         Aedes canadensis       0.75      0.86      0.80         7
+         Aedes infirmatus       1.00      0.80      0.89         5
+        Aedes sollicitans       1.00      1.00      1.00         9
+     Aedes taeniorhynchus       0.94      1.00      0.97        15
+        Aedes triseriatus       0.89      1.00      0.94         8
+             Aedes vexans       1.00      0.88      0.93         8
+       Anopheles crucians       1.00      1.00      1.00         8
+   Anopheles punctipennis       1.00      1.00      1.00         8
+Anopheles quadrimaculatus       1.00      1.00      1.00         8
+Coquillettidia perturbans       1.00      1.00      1.00        10
+          Culex erraticus       0.94      1.00      0.97        15
+         Culex salinarius       1.00      1.00      1.00        19
+          Culex territans       1.00      1.00      1.00         9
+        Culex Nigripalpus       0.83      0.71      0.77         7
+          Culex coronator       0.88      0.88      0.88         8
+   Culex pipiens_restuans       0.93      1.00      0.97        14
+        Culiseta melanura       1.00      1.00      1.00        10
+                    Males       1.00      1.00      1.00         8
+  Orthopodomyia signifera       1.00      1.00      1.00         9
+       Psorophora ciliata       1.00      1.00      1.00         3
+     Psorophora columbiae       1.00      1.00      1.00         7
+         Psorophora ferox       1.00      1.00      1.00         8
+      Psoraphora howardii       1.00      1.00      1.00         5
+   Toxorhynchites rutilus       1.00      1.00      1.00         5
+   Uranotaenia sapphirina       1.00      1.00      1.00         9
+
+                 accuracy                           0.96       251
+                macro avg       0.96      0.95      0.95       251
+             weighted avg       0.96      0.96      0.96       251
+
+================================================
+CONFIGURATIONS
+==================================================
+MODEL         = resnet50
+BATCH SIZE    = 64
+LEARNING RATE = 0.00011076127700835754
+EPOCHS        = 100
+WEIGHT DECAY  = 4.897724382154669e-06
+

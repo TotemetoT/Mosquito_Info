@@ -44,11 +44,11 @@ if __name__ == "__main__":
     from pathlib import Path
     import random
 
-    # test_dir = Path("data/mosquito_data/test")
+    # test_dir = Path("data/split/test")
 
     # image = random.choice(list(test_dir.glob("*.jpg")))
 
-    image = Path("data/external/09999.jpg")
+    image = Path("data/split/test/17035.jpg")
 
     print(str(image))
 

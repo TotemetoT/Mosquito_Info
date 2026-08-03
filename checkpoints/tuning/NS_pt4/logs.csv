@@ -1,0 +1,1 @@
+epoch,train_loss,train_acc,val_loss,val_acc,LR,batch_loss,batch_size

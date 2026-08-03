@@ -196,12 +196,12 @@ def evaluate(m, name, c):
         c
     )
 
-    cm(
-        y_true=y_true,
-        y_pred=y_pred,
-        class_names=class_names,
-        save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
-    )
+    # cm(
+    #     y_true=y_true,
+    #     y_pred=y_pred,
+    #     class_names=class_names,
+    #     save_path=f'{cfg.CHECKPOINT_DIR}/{name}_cm.png'
+    # )
 
 # =========================
 # Loss Plot
@@ -249,6 +249,8 @@ if __name__ == "__main__":
     #     print(m)
     #     name = f"{cfg.MN}_{(i+1)*cfg.SAVE_EPOCHS}"
     #     evaluate(m, name)
-    # evaluate(final, "FINAL", c)
+    evaluate(final, "FINAL", c)
     evaluate(best, "BEST", c)
+    plot_loss()
+    plot_acc()
     print("DONE!")
